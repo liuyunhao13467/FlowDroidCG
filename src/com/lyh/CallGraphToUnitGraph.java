@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import soot.Body;
 import soot.MethodOrMethodContext;
 import soot.PackManager;
 import soot.PhaseOptions;
@@ -15,6 +16,8 @@ import soot.jimple.spark.SparkTransformer;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Targets;
 import soot.options.Options;
+import soot.toolkits.graph.UnitGraph;
+import soot.util.cfgcmd.CFGToDotGraph;
 import soot.util.dot.DotGraph;
 import soot.util.dot.DotGraphNode;
 
@@ -62,8 +65,9 @@ public class CallGraphToUnitGraph {
         
         //可视化函数调用图
         visit(cg,entryPoint);
+        //设置要生成的PDF的板式
+        
         //导出函数调用图
-        //cge.exportMIG("flowdroidCFG4.gexf", "C:\\Users\\Administrator\\Desktop\\result");
         exportGraph("example1", "C:\\Users\\Administrator\\Desktop\\result");
     }
 	
@@ -84,9 +88,11 @@ public class CallGraphToUnitGraph {
 	 */
 	private static void visit(CallGraph cg,SootMethod m){
 		//在soot中，函数的signature就是由该函数的类名，函数名，参数类型，以及返回值类型组成的字符串
-        String methodId = m.getSignature();
+		//String methodId = m.getSignature();
+        String methodId = m.getName();
         //记录已经处理过该点
-        visited.put(m.getSignature(), true);
+        //visited.put(m.getSignature(), true);
+        visited.put(m.getName(), true);
         //以函数的signature为label在图中添加该节点
         dotGraph.drawNode(methodId);
         //下面可以对上面刚生成的DotNode设置一些参数(Attribute)
@@ -100,7 +106,10 @@ public class CallGraphToUnitGraph {
                 if(p == null){
                     System.out.println("p is null");
                 }
-                if(!visited.containsKey(p.getSignature())){
+                /*if(!visited.containsKey(p.getSignature())){
+                    visit(cg,p);
+                }*/
+                if(!visited.containsKey(p.getName())){
                     visit(cg,p);
                 }
             }
@@ -112,19 +121,37 @@ public class CallGraphToUnitGraph {
             while(ctargets.hasNext())
             {
                 SootMethod c = (SootMethod) ctargets.next();
+                
+                Body thisBody = c.getActiveBody();
+                UnitGraph cfg = new UnitGraph(thisBody) {
+				};
+				DotGraph cfgDot = new DotGraph(methodId);
+				CFGToDotGraph dotUtil = new CFGToDotGraph();
+				cfgDot = dotUtil.drawCFG(cfg, thisBody);
+				
                 if(c == null){
                     System.out.println("c is null");
                 }
                 //将被调用的函数加入图中
-                dotGraph.drawNode(c.getSignature());
+                //dotGraph.drawNode(c.getSignature());
+                dotGraph.drawNode(c.getName());
                 //添加一条指向该被调函数的边
-                dotGraph.drawEdge(methodId, c.getSignature());
-                if(!visited.containsKey(c.getSignature())){
+                //dotGraph.drawEdge(methodId, c.getSignature());
+                dotGraph.drawEdge(methodId, c.getName());
+                /*if(!visited.containsKey(c.getSignature())){
+                    //递归
+                    visit(cg,c);
+                }*/
+                if(!visited.containsKey(c.getName())){
                     //递归
                     visit(cg,c);
                 }
             }
         }
+	}
+	
+	public static void createCFG(CallGraph cg){
+		
 	}
 	
 	/**
