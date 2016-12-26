@@ -1,4 +1,4 @@
-package flowdroid.entities;
+package com.wang.flowdroid.entities;
 
 public class MethodID {
 private Apk apk;

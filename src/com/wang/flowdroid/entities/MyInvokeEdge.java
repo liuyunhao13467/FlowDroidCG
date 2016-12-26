@@ -1,4 +1,4 @@
-package flowdroid.entities;
+package com.wang.flowdroid.entities;
 
 public class MyInvokeEdge extends MyEdge{
 

@@ -1,4 +1,4 @@
-package flowdroid.algorithm;
+package com.wang.flowdroid.algorithm;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

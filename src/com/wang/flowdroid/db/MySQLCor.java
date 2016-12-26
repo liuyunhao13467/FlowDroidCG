@@ -1,4 +1,4 @@
-package flowdroid.db;
+package com.wang.flowdroid.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

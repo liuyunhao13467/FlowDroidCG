@@ -1,10 +1,9 @@
-package flowdroid.entities;
+package com.wang.flowdroid.entities;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import flowdroid.entities.MyEdge;
 
 public class Apk {
 	//应该能够看到其拥有的包，类，方法。边？

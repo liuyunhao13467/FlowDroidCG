@@ -1,3 +1,4 @@
+package com.wang;
 
 public class SwitchTest {
 	static enum DataType{Max,Min,Middle};
