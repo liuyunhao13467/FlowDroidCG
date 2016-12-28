@@ -1,0 +1,86 @@
+public class TestMain extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0;
+
+        TestMain.C(1);
+
+        return;
+    }
+
+    public static void A()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside A");
+
+        return;
+    }
+
+    public static void B()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside B");
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int i;
+        java.io.PrintStream temp$0;
+
+        i := @parameter0;
+
+        if i > 1 goto label1;
+
+        goto label2;
+
+     label1:
+        TestMain.A();
+
+        goto label5;
+
+     label2:
+        TestMain.B();
+
+        if i < 0 goto label3;
+
+        goto label4;
+
+     label3:
+        TestMain.A();
+
+        goto label5;
+
+     label4:
+        TestMain.B();
+
+     label5:
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("hello world!!");
+
+        return;
+    }
+
+    public void <init>()
+    {
+        TestMain this;
+
+        this := @this;
+
+        this.<init>();
+
+        return;
+    }
+}

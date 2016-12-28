@@ -1,0 +1,157 @@
+public class TestMain2 extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0;
+
+        TestMain2.C(1);
+
+        return;
+    }
+
+    public static void A1()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside A");
+
+        return;
+    }
+
+    public static void A2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside A2");
+
+        return;
+    }
+
+    public static void B2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside B2");
+
+        return;
+    }
+
+    public static void A3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside A3");
+
+        return;
+    }
+
+    public static void B3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = java.lang.System.out;
+
+        temp$0.println("inside B3");
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int i, temp$0, temp$3, temp$6, temp$7, temp$10;
+        double temp$1, temp$2, temp$8, temp$9;
+        java.io.PrintStream temp$4, temp$11;
+
+        i := @parameter0;
+
+        TestMain2.A1();
+
+        temp$0 = 2 * i;
+
+        temp$1 = (double) temp$0;
+
+        temp$2 = temp$1 + 0.5;
+
+        temp$3 = temp$2 cmpl 1.0;
+
+        if temp$3 <= 0 goto label5;
+
+        goto label1;
+
+     label1:
+        TestMain2.A2();
+
+     label2:
+        if 0 < i goto label3;
+
+        goto label4;
+
+     label3:
+        temp$4 = java.lang.System.out;
+
+        temp$4.println("in the cycle");
+
+        temp$6 = i + 1;
+
+        i = temp$6;
+
+        goto label2;
+
+     label4:
+        goto label8;
+
+     label5:
+        TestMain2.B2();
+
+        temp$7 = 2 * i;
+
+        temp$8 = (double) temp$7;
+
+        temp$9 = temp$8 + 0.5;
+
+        temp$10 = temp$9 cmpg 0.0;
+
+        if temp$10 >= 0 goto label7;
+
+        goto label6;
+
+     label6:
+        TestMain2.A3();
+
+        TestMain2.A2();
+
+        goto label8;
+
+     label7:
+        TestMain2.B3();
+
+     label8:
+        temp$11 = java.lang.System.out;
+
+        temp$11.println("hello world!!");
+
+        return;
+    }
+
+    public void <init>()
+    {
+        TestMain2 this;
+
+        this := @this;
+
+        this.<init>();
+
+        return;
+    }
+}

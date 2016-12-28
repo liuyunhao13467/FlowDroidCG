@@ -1,0 +1,119 @@
+final enum class com.nbpcorp.mobilead.sdk.O extends java.lang.Enum
+{
+    public static final enum com.nbpcorp.mobilead.sdk.O a;
+    public static final enum com.nbpcorp.mobilead.sdk.O b;
+    public static final enum com.nbpcorp.mobilead.sdk.O c;
+    public static final enum com.nbpcorp.mobilead.sdk.O d;
+    public static final enum com.nbpcorp.mobilead.sdk.O e;
+    private static final com.nbpcorp.mobilead.sdk.O[] f;
+
+    static void <clinit>()
+    {
+        com.nbpcorp.mobilead.sdk.O $r0;
+        com.nbpcorp.mobilead.sdk.O[] $r1;
+
+        $r0 = new com.nbpcorp.mobilead.sdk.O;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.O: void <init>(java.lang.String,int)>("INIT", 0);
+
+        <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O a> = $r0;
+
+        $r0 = new com.nbpcorp.mobilead.sdk.O;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.O: void <init>(java.lang.String,int)>("REQUEST", 1);
+
+        <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O b> = $r0;
+
+        $r0 = new com.nbpcorp.mobilead.sdk.O;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.O: void <init>(java.lang.String,int)>("RUNNING", 2);
+
+        <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O c> = $r0;
+
+        $r0 = new com.nbpcorp.mobilead.sdk.O;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.O: void <init>(java.lang.String,int)>("STOP", 3);
+
+        <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O d> = $r0;
+
+        $r0 = new com.nbpcorp.mobilead.sdk.O;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.O: void <init>(java.lang.String,int)>("USERSTOP", 4);
+
+        <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O e> = $r0;
+
+        $r1 = newarray (com.nbpcorp.mobilead.sdk.O)[5];
+
+        $r0 = <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O a>;
+
+        $r1[0] = $r0;
+
+        $r0 = <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O b>;
+
+        $r1[1] = $r0;
+
+        $r0 = <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O c>;
+
+        $r1[2] = $r0;
+
+        $r0 = <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O d>;
+
+        $r1[3] = $r0;
+
+        $r0 = <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O e>;
+
+        $r1[4] = $r0;
+
+        <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O[] f> = $r1;
+
+        return;
+    }
+
+    private void <init>(java.lang.String, int)
+    {
+        com.nbpcorp.mobilead.sdk.O $r0;
+        java.lang.String $r1;
+        int $i0;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.O;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $i0 := @parameter1: int;
+
+        specialinvoke $r0.<java.lang.Enum: void <init>(java.lang.String,int)>($r1, $i0);
+
+        return;
+    }
+
+    public static com.nbpcorp.mobilead.sdk.O valueOf(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.Enum $r1;
+        com.nbpcorp.mobilead.sdk.O $r2;
+
+        $r0 := @parameter0: java.lang.String;
+
+        $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "com/nbpcorp/mobilead/sdk/O", $r0);
+
+        $r2 = (com.nbpcorp.mobilead.sdk.O) $r1;
+
+        return $r2;
+    }
+
+    public static com.nbpcorp.mobilead.sdk.O[] values()
+    {
+        com.nbpcorp.mobilead.sdk.O[] $r0, $r1;
+        int $i0;
+
+        $r0 = <com.nbpcorp.mobilead.sdk.O: com.nbpcorp.mobilead.sdk.O[] f>;
+
+        $i0 = lengthof $r0;
+
+        $r1 = newarray (com.nbpcorp.mobilead.sdk.O)[$i0];
+
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r0, 0, $r1, 0, $i0);
+
+        return $r1;
+    }
+}

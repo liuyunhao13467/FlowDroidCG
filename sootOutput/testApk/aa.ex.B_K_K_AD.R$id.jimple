@@ -1,0 +1,28 @@
+public final class aa.ex.B_K_K_AD.R$id extends java.lang.Object
+{
+    public static final int adview1;
+    public static final int list;
+    public static final int mainLayout;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$id $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$id;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.R$id: int mainLayout> = 2131099648;
+
+        <aa.ex.B_K_K_AD.R$id: int list> = 2131099650;
+
+        <aa.ex.B_K_K_AD.R$id: int adview1> = 2131099649;
+
+        return;
+    }
+}

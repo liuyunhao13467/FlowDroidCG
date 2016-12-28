@@ -1,0 +1,132 @@
+public class SwitchTest extends java.lang.Object
+{
+    public static java.lang.Class class$SwitchTest$DataType;
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0: java.lang.String[];
+
+        return;
+    }
+
+    public static void A1()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A");
+
+        return;
+    }
+
+    public static void A2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A2");
+
+        return;
+    }
+
+    public static void A3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A3");
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int type;
+        java.io.PrintStream temp$0, temp$1;
+
+        type := @parameter0: int;
+
+        goto label5;
+
+     label1:
+        staticinvoke <SwitchTest: void A1()>();
+
+        goto label6;
+
+     label2:
+        staticinvoke <SwitchTest: void A2()>();
+
+        goto label6;
+
+     label3:
+        staticinvoke <SwitchTest: void A3()>();
+
+        goto label6;
+
+     label4:
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        temp$0.<java.io.PrintStream: void println(java.lang.String)>("wrong !!");
+
+        goto label6;
+
+     label5:
+        tableswitch(type)
+        {
+            case 0: goto label1;
+            case 1: goto label2;
+            case 2: goto label3;
+            default: goto label4;
+        };
+
+     label6:
+        temp$1 = <java.lang.System: java.io.PrintStream out>;
+
+        temp$1.<java.io.PrintStream: void println(java.lang.String)>("end ...");
+
+        return;
+    }
+
+    public void <init>()
+    {
+        SwitchTest this;
+
+        this := @this: SwitchTest;
+
+        this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static java.lang.Class class$(java.lang.String)
+    {
+        java.lang.String name, temp$2;
+        java.lang.Class temp$0;
+        java.lang.ClassNotFoundException e;
+        java.lang.NoClassDefFoundError temp$1;
+
+        name := @parameter0: java.lang.String;
+
+     label1:
+        temp$0 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>(name);
+
+     label2:
+        return temp$0;
+
+     label3:
+        e := @caughtexception;
+
+        temp$2 = e.<java.lang.ClassNotFoundException: java.lang.String getMessage()>();
+
+        temp$1 = new java.lang.NoClassDefFoundError(temp$2);
+
+        throw temp$1;
+
+        catch java.lang.ClassNotFoundException from label1 to label2 with label3;
+    }
+}

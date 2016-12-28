@@ -1,0 +1,89 @@
+public class android.support.v4.net.ConnectivityManagerCompat extends java.lang.Object
+{
+    private static final android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl IMPL;
+
+    static void <clinit>()
+    {
+        int $i0;
+        android.support.v4.net.ConnectivityManagerCompat$JellyBeanConnectivityManagerCompatImpl $r0;
+        android.support.v4.net.ConnectivityManagerCompat$HoneycombMR2ConnectivityManagerCompatImpl $r1;
+        android.support.v4.net.ConnectivityManagerCompat$GingerbreadConnectivityManagerCompatImpl $r2;
+        android.support.v4.net.ConnectivityManagerCompat$BaseConnectivityManagerCompatImpl $r3;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+
+        if $i0 < 16 goto label1;
+
+        $r0 = new android.support.v4.net.ConnectivityManagerCompat$JellyBeanConnectivityManagerCompatImpl;
+
+        specialinvoke $r0.<android.support.v4.net.ConnectivityManagerCompat$JellyBeanConnectivityManagerCompatImpl: void <init>()>();
+
+        <android.support.v4.net.ConnectivityManagerCompat: android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl IMPL> = $r0;
+
+        return;
+
+     label1:
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+
+        if $i0 < 13 goto label2;
+
+        $r1 = new android.support.v4.net.ConnectivityManagerCompat$HoneycombMR2ConnectivityManagerCompatImpl;
+
+        specialinvoke $r1.<android.support.v4.net.ConnectivityManagerCompat$HoneycombMR2ConnectivityManagerCompatImpl: void <init>()>();
+
+        <android.support.v4.net.ConnectivityManagerCompat: android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl IMPL> = $r1;
+
+        return;
+
+     label2:
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+
+        if $i0 < 8 goto label3;
+
+        $r2 = new android.support.v4.net.ConnectivityManagerCompat$GingerbreadConnectivityManagerCompatImpl;
+
+        specialinvoke $r2.<android.support.v4.net.ConnectivityManagerCompat$GingerbreadConnectivityManagerCompatImpl: void <init>()>();
+
+        <android.support.v4.net.ConnectivityManagerCompat: android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl IMPL> = $r2;
+
+        return;
+
+     label3:
+        $r3 = new android.support.v4.net.ConnectivityManagerCompat$BaseConnectivityManagerCompatImpl;
+
+        specialinvoke $r3.<android.support.v4.net.ConnectivityManagerCompat$BaseConnectivityManagerCompatImpl: void <init>()>();
+
+        <android.support.v4.net.ConnectivityManagerCompat: android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl IMPL> = $r3;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        android.support.v4.net.ConnectivityManagerCompat $r0;
+
+        $r0 := @this: android.support.v4.net.ConnectivityManagerCompat;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public boolean isActiveNetworkMetered(android.net.ConnectivityManager)
+    {
+        android.support.v4.net.ConnectivityManagerCompat $r0;
+        android.net.ConnectivityManager $r1;
+        boolean $z0;
+        android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl $r2;
+
+        $r0 := @this: android.support.v4.net.ConnectivityManagerCompat;
+
+        $r1 := @parameter0: android.net.ConnectivityManager;
+
+        $r2 = <android.support.v4.net.ConnectivityManagerCompat: android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl IMPL>;
+
+        $z0 = interfaceinvoke $r2.<android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl: boolean isActiveNetworkMetered(android.net.ConnectivityManager)>($r1);
+
+        return $z0;
+    }
+}

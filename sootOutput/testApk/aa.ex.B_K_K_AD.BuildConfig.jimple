@@ -1,0 +1,22 @@
+public final class aa.ex.B_K_K_AD.BuildConfig extends java.lang.Object
+{
+    public static final boolean DEBUG;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.BuildConfig $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.BuildConfig;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.BuildConfig: boolean DEBUG> = 1;
+
+        return;
+    }
+}

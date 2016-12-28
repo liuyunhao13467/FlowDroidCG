@@ -1,0 +1,51 @@
+public class com.nbpcorp.mobilead.sdk.a extends java.lang.Object
+{
+    java.lang.String a;
+    boolean b;
+    int c;
+    int d;
+    java.util.Map e;
+    com.nbpcorp.mobilead.sdk.U f;
+
+    private void <init>(com.nbpcorp.mobilead.sdk.x)
+    {
+        com.nbpcorp.mobilead.sdk.a $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+        com.nbpcorp.mobilead.sdk.U $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.a;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<com.nbpcorp.mobilead.sdk.a: java.lang.String a> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.a: boolean b> = 0;
+
+        $r2 = new com.nbpcorp.mobilead.sdk.U;
+
+        specialinvoke $r2.<com.nbpcorp.mobilead.sdk.U: void <init>(com.nbpcorp.mobilead.sdk.x,byte)>($r1, 0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.a: com.nbpcorp.mobilead.sdk.U f> = $r2;
+
+        return;
+    }
+
+    void <init>(com.nbpcorp.mobilead.sdk.x, byte)
+    {
+        com.nbpcorp.mobilead.sdk.a $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+        byte $b0;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.a;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        $b0 := @parameter1: byte;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.a: void <init>(com.nbpcorp.mobilead.sdk.x)>($r1);
+
+        return;
+    }
+}

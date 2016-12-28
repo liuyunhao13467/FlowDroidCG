@@ -1,0 +1,5 @@
+public interface  com.nbpcorp.mobilead.sdk.MobileAdListener extends java.lang.Object
+{
+
+    public abstract void onReceive(int);
+}

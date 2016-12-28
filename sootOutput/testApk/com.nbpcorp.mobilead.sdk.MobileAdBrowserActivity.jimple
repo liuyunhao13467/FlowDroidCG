@@ -1,0 +1,928 @@
+public final class com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity extends android.app.Activity
+{
+    android.webkit.WebView a;
+    android.app.AlertDialog b;
+    private android.widget.LinearLayout c;
+    private android.widget.ProgressBar d;
+    private android.widget.LinearLayout e;
+    private com.nbpcorp.mobilead.sdk.v f;
+    private com.nbpcorp.mobilead.sdk.v g;
+    private com.nbpcorp.mobilead.sdk.v h;
+    private com.nbpcorp.mobilead.sdk.v i;
+    private com.nbpcorp.mobilead.sdk.v j;
+    private android.widget.ImageView k;
+    private int l;
+    private int m;
+    private int n;
+    private int o;
+    private int p;
+    private boolean q;
+    private boolean r;
+    private java.lang.String s;
+    private java.lang.String t;
+    private java.lang.String u;
+    private final java.lang.String[] v;
+
+    public void <init>()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        java.lang.String[] $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int m> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean q> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean r> = 0;
+
+        $r1 = newarray (java.lang.String)[3];
+
+        $r1[0] = "URL \ubcf5\uc0ac";
+
+        $r1[1] = "\ub2e8\ub9d0 \ube0c\ub77c\uc6b0\uc800\ub85c \uc5f4\uae30";
+
+        $r1[2] = "\uc0c8\ub85c \uace0\uce68";
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String[] v> = $r1;
+
+        return;
+    }
+
+    private static int a(int, float)
+    {
+        int $i0;
+        float $f0, $f1;
+
+        $i0 := @parameter0: int;
+
+        $f0 := @parameter1: float;
+
+        $f1 = (float) $i0;
+
+        $f0 = $f1 * $f0;
+
+        $f0 = $f0 + 0.5F;
+
+        $i0 = (int) $f0;
+
+        return $i0;
+    }
+
+    static android.widget.ProgressBar a(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.widget.ProgressBar r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ProgressBar d>;
+
+        return r1;
+    }
+
+    private void a()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        java.lang.Object $r1;
+        android.view.WindowManager $r2;
+        android.view.Display $r3;
+        int $i0, $i1;
+        float $f0;
+        com.nbpcorp.mobilead.sdk.v $r4;
+        android.widget.ImageView $r5;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 = virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.Object getSystemService(java.lang.String)>("window");
+
+        $r2 = (android.view.WindowManager) $r1;
+
+        $r3 = interfaceinvoke $r2.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        $i0 = virtualinvoke $r3.<android.view.Display: int getWidth()>();
+
+        $f0 = (float) $i0;
+
+        $f0 = $f0 / 320.0F;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(61, $f0);
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n>;
+
+        $i0 = $i0 - $i1;
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v f>;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void a(android.widget.ImageView,int,float,int)>($r4, 1, $f0, $i0);
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v g>;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void b(android.widget.ImageView,int,float,int)>($r4, 3, $f0, $i0);
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v h>;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void b(android.widget.ImageView,int,float,int)>($r4, 3, $f0, $i0);
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v i>;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void b(android.widget.ImageView,int,float,int)>($r4, 3, $f0, $i0);
+
+        $r5 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ImageView k>;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void a(android.widget.ImageView,int,float,int)>($r5, 1, $f0, $i0);
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v j>;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void a(android.widget.ImageView,int,float,int)>($r4, 0, $f0, $i0);
+
+        return;
+    }
+
+    private void a(android.widget.ImageView, int, float, int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.widget.ImageView $r1;
+        int $i0, $i1;
+        float $f0;
+        android.view.ViewGroup$MarginLayoutParams $r2;
+        android.view.ViewGroup$LayoutParams $r3;
+        android.widget.LinearLayout$LayoutParams $r4;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 := @parameter0: android.widget.ImageView;
+
+        $i0 := @parameter1: int;
+
+        $f0 := @parameter2: float;
+
+        $i1 := @parameter3: int;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>($i0, $f0);
+
+        $i1 = $i1 / 2;
+
+        $i0 = $i0 + $i1;
+
+        $r2 = new android.view.ViewGroup$MarginLayoutParams;
+
+        $r3 = virtualinvoke $r1.<android.widget.ImageView: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+
+        specialinvoke $r2.<android.view.ViewGroup$MarginLayoutParams: void <init>(android.view.ViewGroup$LayoutParams)>($r3);
+
+        virtualinvoke $r2.<android.view.ViewGroup$MarginLayoutParams: void setMargins(int,int,int,int)>($i0, 0, 0, 0);
+
+        $r4 = new android.widget.LinearLayout$LayoutParams;
+
+        specialinvoke $r4.<android.widget.LinearLayout$LayoutParams: void <init>(android.view.ViewGroup$MarginLayoutParams)>($r2);
+
+        virtualinvoke $r1.<android.widget.ImageView: void setLayoutParams(android.view.ViewGroup$LayoutParams)>($r4);
+
+        return;
+    }
+
+    static void a(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity, boolean)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $z0 := @parameter1: boolean;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean q> = $z0;
+
+        return;
+    }
+
+    static boolean a(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity, android.content.Intent)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.content.Intent $r1;
+        android.content.Context $r2;
+        android.content.pm.PackageManager $r3;
+        java.util.List $r4;
+        int $i0;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 := @parameter1: android.content.Intent;
+
+        $r2 = virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.content.Context getApplicationContext()>();
+
+        $r3 = virtualinvoke $r2.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+
+        $r4 = virtualinvoke $r3.<android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)>($r1, 65536);
+
+        $i0 = interfaceinvoke $r4.<java.util.List: int size()>();
+
+        if $i0 <= 0 goto label1;
+
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    private void b(android.widget.ImageView, int, float, int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.widget.ImageView $r1;
+        int $i0, $i1;
+        float $f0;
+        android.view.ViewGroup$MarginLayoutParams $r2;
+        android.view.ViewGroup$LayoutParams $r3;
+        android.widget.LinearLayout$LayoutParams $r4;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 := @parameter0: android.widget.ImageView;
+
+        $i0 := @parameter1: int;
+
+        $f0 := @parameter2: float;
+
+        $i1 := @parameter3: int;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(3, $f0);
+
+        $i0 = $i0 + $i1;
+
+        $r2 = new android.view.ViewGroup$MarginLayoutParams;
+
+        $r3 = virtualinvoke $r1.<android.widget.ImageView: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+
+        specialinvoke $r2.<android.view.ViewGroup$MarginLayoutParams: void <init>(android.view.ViewGroup$LayoutParams)>($r3);
+
+        virtualinvoke $r2.<android.view.ViewGroup$MarginLayoutParams: void setMargins(int,int,int,int)>($i0, 0, 0, 0);
+
+        $r4 = new android.widget.LinearLayout$LayoutParams;
+
+        specialinvoke $r4.<android.widget.LinearLayout$LayoutParams: void <init>(android.view.ViewGroup$MarginLayoutParams)>($r2);
+
+        virtualinvoke $r1.<android.widget.ImageView: void setLayoutParams(android.view.ViewGroup$LayoutParams)>($r4);
+
+        return;
+    }
+
+    static void b(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        com.nbpcorp.mobilead.sdk.v $r1;
+        boolean $z0;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v h>;
+
+        $z0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean q>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.v: void a(boolean)>($z0);
+
+        return;
+    }
+
+    static void c(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        com.nbpcorp.mobilead.sdk.v $r1;
+        android.webkit.WebView $r2;
+        boolean $z0;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v f>;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        $z0 = virtualinvoke $r2.<android.webkit.WebView: boolean canGoBack()>();
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.v: void a(boolean)>($z0);
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v g>;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        $z0 = virtualinvoke $r2.<android.webkit.WebView: boolean canGoForward()>();
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.v: void a(boolean)>($z0);
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v h>;
+
+        $z0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean q>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.v: void a(boolean)>($z0);
+
+        return;
+    }
+
+    static boolean d(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        boolean z0;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        z0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean r>;
+
+        return z0;
+    }
+
+    static java.lang.String e(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        java.lang.String r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String t>;
+
+        return r1;
+    }
+
+    static java.lang.String f(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        java.lang.String r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String u>;
+
+        return r1;
+    }
+
+    static java.lang.String g(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        java.lang.String r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String s>;
+
+        return r1;
+    }
+
+    static boolean h(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        boolean z0;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        z0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean q>;
+
+        return z0;
+    }
+
+    static java.lang.String[] i(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        java.lang.String[] r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String[] v>;
+
+        return r1;
+    }
+
+    public final void onConfigurationChanged(android.content.res.Configuration)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.content.res.Configuration $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 := @parameter0: android.content.res.Configuration;
+
+        specialinvoke $r0.<android.app.Activity: void onConfigurationChanged(android.content.res.Configuration)>($r1);
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void a()>();
+
+        return;
+    }
+
+    public final void onCreate(android.os.Bundle)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.os.Bundle $r1;
+        java.lang.Object $r2;
+        android.view.WindowManager $r3;
+        android.view.Display $r4;
+        android.util.DisplayMetrics $r5;
+        float $f0;
+        int $i0, $i1;
+        android.content.Intent $r6;
+        java.lang.String $r7, $r8;
+        boolean $z0;
+        android.widget.LinearLayout $r9, $r29;
+        android.widget.ProgressBar $r10;
+        android.webkit.WebView $r11;
+        android.webkit.WebSettings $r12;
+        com.nbpcorp.mobilead.sdk.u $r13;
+        com.nbpcorp.mobilead.sdk.t $r14;
+        android.widget.LinearLayout$LayoutParams $r15;
+        java.io.ByteArrayInputStream $r16;
+        byte[] $r17, $r21;
+        android.graphics.Bitmap $r18;
+        android.graphics.drawable.BitmapDrawable $r19;
+        com.nbpcorp.mobilead.sdk.v $r20;
+        com.nbpcorp.mobilead.sdk.n $r22;
+        com.nbpcorp.mobilead.sdk.o $r23;
+        com.nbpcorp.mobilead.sdk.p $r24;
+        com.nbpcorp.mobilead.sdk.q $r25;
+        android.widget.ImageView $r26;
+        android.widget.ImageView$ScaleType $r27;
+        com.nbpcorp.mobilead.sdk.s $r28;
+        java.io.IOException $r30, $r32;
+        java.lang.RuntimeException $r31;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        $r2 = virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.Object getSystemService(java.lang.String)>("window");
+
+        $r3 = (android.view.WindowManager) $r2;
+
+        $r4 = interfaceinvoke $r3.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        $r5 = new android.util.DisplayMetrics;
+
+        specialinvoke $r5.<android.util.DisplayMetrics: void <init>()>();
+
+        virtualinvoke $r4.<android.view.Display: void getMetrics(android.util.DisplayMetrics)>($r5);
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(40, $f0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l> = $i0;
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(5, $f0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int m> = $i0;
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(25, $f0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o> = $i0;
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(21, $f0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p> = $i0;
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $i0 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int a(int,float)>(61, $f0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n> = $i0;
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $r6 = virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.content.Intent getIntent()>();
+
+        $r7 = virtualinvoke $r6.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("URL");
+
+        $z0 = virtualinvoke $r6.<android.content.Intent: boolean getBooleanExtra(java.lang.String,boolean)>("APPLAUNCH", 0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: boolean r> = $z0;
+
+        $r8 = virtualinvoke $r6.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("DOWNLOAD");
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String s> = $r8;
+
+        $r8 = virtualinvoke $r6.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("REPORT_APPLAUNCH");
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String t> = $r8;
+
+        $r8 = virtualinvoke $r6.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("REPORT_DOWNLOAD");
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: java.lang.String u> = $r8;
+
+        $r9 = new android.widget.LinearLayout;
+
+        specialinvoke $r9.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c> = $r9;
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void setOrientation(int)>(1);
+
+        $r10 = new android.widget.ProgressBar;
+
+        specialinvoke $r10.<android.widget.ProgressBar: void <init>(android.content.Context,android.util.AttributeSet,int)>($r0, null, 16842872);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ProgressBar d> = $r10;
+
+        $r10 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ProgressBar d>;
+
+        virtualinvoke $r10.<android.widget.ProgressBar: void setVisibility(int)>(8);
+
+        $r10 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ProgressBar d>;
+
+        virtualinvoke $r10.<android.widget.ProgressBar: void setMax(int)>(100);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c>;
+
+        $r10 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ProgressBar d>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int m>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r10, -1, $i0);
+
+        $r11 = new android.webkit.WebView;
+
+        specialinvoke $r11.<android.webkit.WebView: void <init>(android.content.Context)>($r0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a> = $r11;
+
+        $r11 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        $r12 = virtualinvoke $r11.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r12.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+
+        $r11 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        $r13 = new com.nbpcorp.mobilead.sdk.u;
+
+        specialinvoke $r13.<com.nbpcorp.mobilead.sdk.u: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity,byte)>($r0, 0);
+
+        virtualinvoke $r11.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r13);
+
+        $r11 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        $r14 = new com.nbpcorp.mobilead.sdk.t;
+
+        specialinvoke $r14.<com.nbpcorp.mobilead.sdk.t: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity,byte)>($r0, 0);
+
+        virtualinvoke $r11.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r14);
+
+        $r15 = new android.widget.LinearLayout$LayoutParams;
+
+        specialinvoke $r15.<android.widget.LinearLayout$LayoutParams: void <init>(int,int,float)>(-1, -2, 1.0F);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c>;
+
+        $r11 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r11, $r15);
+
+        $r9 = new android.widget.LinearLayout;
+
+        specialinvoke $r9.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e> = $r9;
+
+        $r16 = new java.io.ByteArrayInputStream;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.d: byte[] a>;
+
+     label01:
+        specialinvoke $r16.<java.io.ByteArrayInputStream: void <init>(byte[])>($r17);
+
+        $r18 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream)>($r16);
+
+        virtualinvoke $r16.<java.io.InputStream: void close()>();
+
+     label02:
+        $r19 = new android.graphics.drawable.BitmapDrawable;
+
+     label03:
+        specialinvoke $r19.<android.graphics.drawable.BitmapDrawable: void <init>(android.content.res.Resources,android.graphics.Bitmap)>(null, $r18);
+
+     label04:
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+     label05:
+        virtualinvoke $r9.<android.widget.LinearLayout: void setBackgroundDrawable(android.graphics.drawable.Drawable)>($r19);
+
+     label06:
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void setGravity(int)>(16);
+
+        $r20 = new com.nbpcorp.mobilead.sdk.v;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.f: byte[] a>;
+
+        $r21 = <com.nbpcorp.mobilead.sdk.h: byte[] a>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p>;
+
+        specialinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void <init>(android.content.Context,byte[],byte[],int,int)>($r0, $r17, $r21, $i0, $i1);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v f> = $r20;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v f>;
+
+        $r22 = new com.nbpcorp.mobilead.sdk.n;
+
+        specialinvoke $r22.<com.nbpcorp.mobilead.sdk.n: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)>($r0);
+
+        virtualinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void setOnClickListener(android.view.View$OnClickListener)>($r22);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v f>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r20, $i0, $i1);
+
+        $r20 = new com.nbpcorp.mobilead.sdk.v;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.g: byte[] a>;
+
+        $r21 = <com.nbpcorp.mobilead.sdk.i: byte[] a>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p>;
+
+        specialinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void <init>(android.content.Context,byte[],byte[],int,int)>($r0, $r17, $r21, $i0, $i1);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v g> = $r20;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v g>;
+
+        $r23 = new com.nbpcorp.mobilead.sdk.o;
+
+        specialinvoke $r23.<com.nbpcorp.mobilead.sdk.o: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)>($r0);
+
+        virtualinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void setOnClickListener(android.view.View$OnClickListener)>($r23);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v g>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r20, $i0, $i1);
+
+        $r20 = new com.nbpcorp.mobilead.sdk.v;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.j: byte[] a>;
+
+        $r21 = <com.nbpcorp.mobilead.sdk.m: byte[] a>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p>;
+
+        specialinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void <init>(android.content.Context,byte[],byte[],int,int)>($r0, $r17, $r21, $i0, $i1);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v h> = $r20;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v h>;
+
+        $r24 = new com.nbpcorp.mobilead.sdk.p;
+
+        specialinvoke $r24.<com.nbpcorp.mobilead.sdk.p: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)>($r0);
+
+        virtualinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void setOnClickListener(android.view.View$OnClickListener)>($r24);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v h>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r20, $i0, $i1);
+
+        $r20 = new com.nbpcorp.mobilead.sdk.v;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.k: byte[] a>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p>;
+
+        specialinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void <init>(android.content.Context,byte[],byte[],int,int)>($r0, $r17, null, $i0, $i1);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v i> = $r20;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v i>;
+
+        $r25 = new com.nbpcorp.mobilead.sdk.q;
+
+        specialinvoke $r25.<com.nbpcorp.mobilead.sdk.q: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)>($r0);
+
+        virtualinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void setOnClickListener(android.view.View$OnClickListener)>($r25);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v i>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r20, $i0, $i1);
+
+        $r26 = new android.widget.ImageView;
+
+        specialinvoke $r26.<android.widget.ImageView: void <init>(android.content.Context)>($r0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ImageView k> = $r26;
+
+        $r16 = new java.io.ByteArrayInputStream;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.e: byte[] a>;
+
+     label07:
+        specialinvoke $r16.<java.io.ByteArrayInputStream: void <init>(byte[])>($r17);
+
+        $r18 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream)>($r16);
+
+        virtualinvoke $r16.<java.io.InputStream: void close()>();
+
+     label08:
+        $r26 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ImageView k>;
+
+        $r27 = <android.widget.ImageView$ScaleType: android.widget.ImageView$ScaleType FIT_XY>;
+
+        virtualinvoke $r26.<android.widget.ImageView: void setScaleType(android.widget.ImageView$ScaleType)>($r27);
+
+        $r26 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ImageView k>;
+
+        virtualinvoke $r26.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>($r18);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        $r26 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.ImageView k>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r26, 4, $i0);
+
+        $r20 = new com.nbpcorp.mobilead.sdk.v;
+
+        $r17 = <com.nbpcorp.mobilead.sdk.l: byte[] a>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int o>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int p>;
+
+        specialinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void <init>(android.content.Context,byte[],byte[],int,int)>($r0, $r17, null, $i0, $i1);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v j> = $r20;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v j>;
+
+        $r28 = new com.nbpcorp.mobilead.sdk.s;
+
+        specialinvoke $r28.<com.nbpcorp.mobilead.sdk.s: void <init>(com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity)>($r0);
+
+        virtualinvoke $r20.<com.nbpcorp.mobilead.sdk.v: void setOnClickListener(android.view.View$OnClickListener)>($r28);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        $r20 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: com.nbpcorp.mobilead.sdk.v j>;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int n>;
+
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r20, $i0, $i1);
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void a()>();
+
+        $r15 = new android.widget.LinearLayout$LayoutParams;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: int l>;
+
+        specialinvoke $r15.<android.widget.LinearLayout$LayoutParams: void <init>(int,int)>(-1, $i0);
+
+        $r15.<android.widget.LinearLayout$LayoutParams: int gravity> = 80;
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c>;
+
+        $r29 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout e>;
+
+        virtualinvoke $r9.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r29, $r15);
+
+        $r11 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        virtualinvoke $r11.<android.webkit.WebView: void loadUrl(java.lang.String)>($r7);
+
+        $r9 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c>;
+
+        virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: void setContentView(android.view.View)>($r9);
+
+        return;
+
+     label09:
+        $r30 := @caughtexception;
+
+        $r31 = new java.lang.RuntimeException;
+
+        specialinvoke $r31.<java.lang.RuntimeException: void <init>()>();
+
+        throw $r31;
+
+     label10:
+        $r32 := @caughtexception;
+
+        goto label06;
+
+        catch java.io.IOException from label01 to label02 with label10;
+        catch java.io.IOException from label03 to label04 with label10;
+        catch java.io.IOException from label05 to label06 with label10;
+        catch java.io.IOException from label07 to label08 with label09;
+    }
+
+    protected final void onDestroy()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        android.webkit.WebView $r1;
+        android.widget.LinearLayout $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        virtualinvoke $r1.<android.webkit.WebView: void loadUrl(java.lang.String)>("about:blank");
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.widget.LinearLayout c>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void removeAllViews()>();
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        virtualinvoke $r1.<android.webkit.WebView: void destroy()>();
+
+     label1:
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+
+        return;
+    }
+
+    public final boolean onKeyDown(int, android.view.KeyEvent)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity $r0;
+        int $i0;
+        android.view.KeyEvent $r1;
+        android.webkit.WebView $r2;
+        boolean $z0;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity;
+
+        $i0 := @parameter0: int;
+
+        $r1 := @parameter1: android.view.KeyEvent;
+
+        if $i0 != 4 goto label1;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        $z0 = virtualinvoke $r2.<android.webkit.WebView: boolean canGoBack()>();
+
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity: android.webkit.WebView a>;
+
+        virtualinvoke $r2.<android.webkit.WebView: void goBack()>();
+
+        return 1;
+
+     label1:
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean onKeyDown(int,android.view.KeyEvent)>($i0, $r1);
+
+        return $z0;
+    }
+}

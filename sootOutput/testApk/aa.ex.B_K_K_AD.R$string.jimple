@@ -1,0 +1,22 @@
+public final class aa.ex.B_K_K_AD.R$string extends java.lang.Object
+{
+    public static final int app_name;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$string $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$string;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.R$string: int app_name> = 2130968576;
+
+        return;
+    }
+}

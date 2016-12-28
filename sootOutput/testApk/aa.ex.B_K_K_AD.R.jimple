@@ -1,0 +1,14 @@
+public final class aa.ex.B_K_K_AD.R extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

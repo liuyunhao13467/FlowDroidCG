@@ -1,4 +1,4 @@
-package com.wang.flowdroid.db;
+package flowdroid.db;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

@@ -1,0 +1,157 @@
+public class TestMain2 extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0: java.lang.String[];
+
+        staticinvoke <TestMain2: void C(int)>(1);
+
+        return;
+    }
+
+    public static void A1()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A");
+
+        return;
+    }
+
+    public static void A2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A2");
+
+        return;
+    }
+
+    public static void B2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside B2");
+
+        return;
+    }
+
+    public static void A3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A3");
+
+        return;
+    }
+
+    public static void B3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside B3");
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int i, temp$4, temp$7, temp$10, temp$11, temp$14;
+        double temp$5, temp$6, temp$12, temp$13;
+        java.io.PrintStream temp$8, temp$15;
+
+        i := @parameter0: int;
+
+        staticinvoke <TestMain2: void A1()>();
+
+        temp$4 = 2 * i;
+
+        temp$5 = (double) temp$4;
+
+        temp$6 = temp$5 + 0.5;
+
+        temp$7 = temp$6 cmpl 1.0;
+
+        if temp$7 <= 0 goto label5;
+
+        goto label1;
+
+     label1:
+        staticinvoke <TestMain2: void A2()>();
+
+     label2:
+        if 0 < i goto label3;
+
+        goto label4;
+
+     label3:
+        temp$8 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$8.<java.io.PrintStream: void println(java.lang.String)>("in the cycle");
+
+        temp$10 = i + 1;
+
+        i = temp$10;
+
+        goto label2;
+
+     label4:
+        goto label8;
+
+     label5:
+        staticinvoke <TestMain2: void B2()>();
+
+        temp$11 = 2 * i;
+
+        temp$12 = (double) temp$11;
+
+        temp$13 = temp$12 + 0.5;
+
+        temp$14 = temp$13 cmpg 0.0;
+
+        if temp$14 >= 0 goto label7;
+
+        goto label6;
+
+     label6:
+        staticinvoke <TestMain2: void A3()>();
+
+        staticinvoke <TestMain2: void A2()>();
+
+        goto label8;
+
+     label7:
+        staticinvoke <TestMain2: void B3()>();
+
+     label8:
+        temp$15 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$15.<java.io.PrintStream: void println(java.lang.String)>("hello world!!");
+
+        return;
+    }
+
+    public void <init>()
+    {
+        TestMain2 this;
+
+        this := @this: TestMain2;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

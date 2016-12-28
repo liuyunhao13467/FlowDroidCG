@@ -1,0 +1,101 @@
+public class TestMain extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0: java.lang.String[];
+
+        staticinvoke <TestMain: void C(int)>(1);
+
+        return;
+    }
+
+    public static void A()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A");
+
+        return;
+    }
+
+    public static void B()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside B");
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int i, data;
+        java.io.PrintStream temp$0;
+
+        i := @parameter0: int;
+
+        if i > 1 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+
+        staticinvoke <TestMain: void A()>();
+
+        goto label6;
+
+     label2:
+        nop;
+
+        staticinvoke <TestMain: void B()>();
+
+        if i < 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+
+        staticinvoke <TestMain: void A()>();
+
+        goto label5;
+
+     label4:
+        nop;
+
+        staticinvoke <TestMain: void B()>();
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+
+        data = 0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("hello world!!");
+
+        return;
+    }
+
+    public void <init>()
+    {
+        TestMain this;
+
+        this := @this: TestMain;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

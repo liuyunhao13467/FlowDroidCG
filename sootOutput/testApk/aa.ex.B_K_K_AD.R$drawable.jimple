@@ -1,0 +1,25 @@
+public final class aa.ex.B_K_K_AD.R$drawable extends java.lang.Object
+{
+    public static final int background;
+    public static final int ic_launcher;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$drawable $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$drawable;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.R$drawable: int ic_launcher> = 2130837505;
+
+        <aa.ex.B_K_K_AD.R$drawable: int background> = 2130837504;
+
+        return;
+    }
+}

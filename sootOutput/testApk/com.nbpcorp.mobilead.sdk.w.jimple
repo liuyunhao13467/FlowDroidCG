@@ -1,0 +1,137 @@
+final class com.nbpcorp.mobilead.sdk.w extends android.content.BroadcastReceiver
+{
+    private boolean a;
+    private com.nbpcorp.mobilead.sdk.MobileAdView b;
+
+    void <init>(com.nbpcorp.mobilead.sdk.MobileAdView)
+    {
+        com.nbpcorp.mobilead.sdk.w $r0;
+        com.nbpcorp.mobilead.sdk.MobileAdView $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.w;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r0.<com.nbpcorp.mobilead.sdk.w: com.nbpcorp.mobilead.sdk.MobileAdView b> = $r1;
+
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+
+        $r0.<com.nbpcorp.mobilead.sdk.w: boolean a> = 0;
+
+        return;
+    }
+
+    public final void a()
+    {
+        com.nbpcorp.mobilead.sdk.w $r0;
+        android.content.Context $r1;
+        boolean $z0;
+        android.content.IntentFilter $r2;
+        com.nbpcorp.mobilead.sdk.MobileAdView $r3;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.w;
+
+        $z0 = $r0.<com.nbpcorp.mobilead.sdk.w: boolean a>;
+
+        if $z0 != 0 goto label1;
+
+        $r0.<com.nbpcorp.mobilead.sdk.w: boolean a> = 1;
+
+        $r2 = new android.content.IntentFilter;
+
+        specialinvoke $r2.<android.content.IntentFilter: void <init>()>();
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("android.intent.action.USER_PRESENT");
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("android.intent.action.SCREEN_ON");
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("android.intent.action.SCREEN_OFF");
+
+        $r3 = $r0.<com.nbpcorp.mobilead.sdk.w: com.nbpcorp.mobilead.sdk.MobileAdView b>;
+
+        $r1 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a(com.nbpcorp.mobilead.sdk.MobileAdView)>($r3);
+
+        virtualinvoke $r1.<android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r0, $r2);
+
+     label1:
+        return;
+    }
+
+    public final void b()
+    {
+        com.nbpcorp.mobilead.sdk.w $r0;
+        android.content.Context $r1;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.MobileAdView $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.w;
+
+        $z0 = $r0.<com.nbpcorp.mobilead.sdk.w: boolean a>;
+
+        if $z0 == 0 goto label1;
+
+        $r0.<com.nbpcorp.mobilead.sdk.w: boolean a> = 0;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.w: com.nbpcorp.mobilead.sdk.MobileAdView b>;
+
+        $r1 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a(com.nbpcorp.mobilead.sdk.MobileAdView)>($r2);
+
+        virtualinvoke $r1.<android.content.Context: void unregisterReceiver(android.content.BroadcastReceiver)>($r0);
+
+     label1:
+        return;
+    }
+
+    public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.nbpcorp.mobilead.sdk.w $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3;
+        com.nbpcorp.mobilead.sdk.MobileAdView $r4;
+        int $i0;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.x $r5;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.w;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        $r3 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.w: com.nbpcorp.mobilead.sdk.MobileAdView b>;
+
+        $i0 = virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.MobileAdView: int getWindowVisibility()>();
+
+        if $i0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("android.intent.action.SCREEN_OFF");
+
+        if $z0 == 0 goto label1;
+
+        $r5 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x a()>();
+
+        virtualinvoke $r5.<com.nbpcorp.mobilead.sdk.x: void c(boolean)>(1);
+
+        return;
+
+     label1:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("android.intent.action.SCREEN_ON");
+
+        if $z0 != 0 goto label2;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("android.intent.action.USER_PRESENT");
+
+        if $z0 == 0 goto label3;
+
+     label2:
+        $r5 = staticinvoke <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x a()>();
+
+        virtualinvoke $r5.<com.nbpcorp.mobilead.sdk.x: void b(boolean)>(1);
+
+     label3:
+        return;
+    }
+}

@@ -1,0 +1,22 @@
+public final class aa.ex.B_K_K_AD.R$style extends java.lang.Object
+{
+    public static final int AppTheme;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$style $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$style;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.R$style: int AppTheme> = 2131034112;
+
+        return;
+    }
+}

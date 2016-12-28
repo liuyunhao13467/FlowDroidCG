@@ -1,0 +1,25 @@
+public final class aa.ex.B_K_K_AD.R$attr extends java.lang.Object
+{
+    public static final int channel_id;
+    public static final int test;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$attr $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$attr;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.R$attr: int test> = 2130771969;
+
+        <aa.ex.B_K_K_AD.R$attr: int channel_id> = 2130771968;
+
+        return;
+    }
+}

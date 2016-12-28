@@ -1,0 +1,369 @@
+class aa.ex.B_K_K_AD.B_K_K_AD$1 extends java.lang.Object implements android.widget.AdapterView$OnItemClickListener
+{
+    final aa.ex.B_K_K_AD.B_K_K_AD this$0;
+
+    void <init>(aa.ex.B_K_K_AD.B_K_K_AD)
+    {
+        aa.ex.B_K_K_AD.B_K_K_AD$1 $r0;
+        aa.ex.B_K_K_AD.B_K_K_AD $r1;
+
+        $r0 := @this: aa.ex.B_K_K_AD.B_K_K_AD$1;
+
+        $r1 := @parameter0: aa.ex.B_K_K_AD.B_K_K_AD;
+
+        $r0.<aa.ex.B_K_K_AD.B_K_K_AD$1: aa.ex.B_K_K_AD.B_K_K_AD this$0> = $r1;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void onItemClick(android.widget.AdapterView, android.view.View, int, long)
+    {
+        aa.ex.B_K_K_AD.B_K_K_AD$1 $r0;
+        android.widget.AdapterView $r1;
+        android.view.View $r2;
+        int $i0;
+        long $l1;
+        android.content.Intent $r3;
+        android.net.Uri $r4;
+        java.lang.String $r5;
+        aa.ex.B_K_K_AD.B_K_K_AD $r6;
+
+        $r0 := @this: aa.ex.B_K_K_AD.B_K_K_AD$1;
+
+        $r1 := @parameter0: android.widget.AdapterView;
+
+        $r2 := @parameter1: android.view.View;
+
+        $i0 := @parameter2: int;
+
+        $l1 := @parameter3: long;
+
+        $r5 = "";
+
+        lookupswitch($i0)
+        {
+            case 0: goto label02;
+            case 1: goto label03;
+            case 2: goto label04;
+            case 3: goto label05;
+            case 4: goto label06;
+            case 5: goto label07;
+            case 6: goto label08;
+            case 7: goto label09;
+            case 8: goto label10;
+            case 9: goto label11;
+            case 10: goto label12;
+            case 11: goto label13;
+            case 12: goto label14;
+            case 13: goto label15;
+            case 14: goto label16;
+            case 15: goto label17;
+            case 16: goto label18;
+            case 17: goto label19;
+            case 18: goto label20;
+            case 19: goto label21;
+            case 20: goto label22;
+            case 21: goto label23;
+            case 22: goto label24;
+            case 23: goto label25;
+            case 24: goto label26;
+            case 25: goto label27;
+            case 26: goto label28;
+            case 27: goto label29;
+            case 28: goto label30;
+            case 29: goto label31;
+            case 30: goto label32;
+            case 31: goto label33;
+            case 32: goto label34;
+            case 33: goto label35;
+            case 34: goto label36;
+            case 35: goto label37;
+            case 36: goto label38;
+            case 37: goto label39;
+            case 38: goto label40;
+            case 39: goto label41;
+            case 40: goto label42;
+            case 41: goto label43;
+            case 42: goto label44;
+            case 43: goto label45;
+            case 44: goto label46;
+            case 45: goto label47;
+            case 46: goto label48;
+            case 47: goto label49;
+            case 48: goto label50;
+            case 49: goto label51;
+            case 50: goto label52;
+            default: goto label01;
+        };
+
+     label01:
+        $r3 = new android.content.Intent;
+
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r5);
+
+        specialinvoke $r3.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>("android.intent.action.VIEW", $r4);
+
+        $r6 = $r0.<aa.ex.B_K_K_AD.B_K_K_AD$1: aa.ex.B_K_K_AD.B_K_K_AD this$0>;
+
+        virtualinvoke $r6.<aa.ex.B_K_K_AD.B_K_K_AD: void startActivity(android.content.Intent)>($r3);
+
+        return;
+
+     label02:
+        $r5 = "http://blog.naver.com/emdeocompany/220063798390";
+
+        goto label01;
+
+     label03:
+        $r5 = "http://www.youtube.com/watch?v=UwuAPyOImoI";
+
+        goto label01;
+
+     label04:
+        $r5 = "http://www.youtube.com/watch?v=0pWz9xztrHE";
+
+        goto label01;
+
+     label05:
+        $r5 = "http://www.youtube.com/watch?v=Hs8QGv2VqJA";
+
+        goto label01;
+
+     label06:
+        $r5 = "http://www.youtube.com/watch?v=ouiiGNxbGgg";
+
+        goto label01;
+
+     label07:
+        $r5 = "http://www.youtube.com/watch?v=kwnLH_80JjM";
+
+        goto label01;
+
+     label08:
+        $r5 = "http://www.youtube.com/watch?v=OwCJcd0QhcI";
+
+        goto label01;
+
+     label09:
+        $r5 = "http://www.youtube.com/watch?v=b_5AkvUN6EI";
+
+        goto label01;
+
+     label10:
+        $r5 = "http://www.youtube.com/watch?v=ko7Om-48s1U";
+
+        goto label01;
+
+     label11:
+        $r5 = "http://www.youtube.com/watch?v=N5wzkQvzp4c";
+
+        goto label01;
+
+     label12:
+        $r5 = "http://www.youtube.com/watch?v=TCrkA2Sc91Q";
+
+        goto label01;
+
+     label13:
+        $r5 = "http://www.youtube.com/watch?v=Ze6pW9rvmOQ";
+
+        goto label01;
+
+     label14:
+        $r5 = "http://www.youtube.com/watch?v=npttud7NkL0";
+
+        goto label01;
+
+     label15:
+        $r5 = "http://www.youtube.com/watch?v=ZWCSVdbRQeA";
+
+        goto label01;
+
+     label16:
+        $r5 = "http://www.youtube.com/watch?v=Xteny-dgr4I";
+
+        goto label01;
+
+     label17:
+        $r5 = "http://www.youtube.com/watch?v=5HwjMySsKJA";
+
+        goto label01;
+
+     label18:
+        $r5 = "http://www.youtube.com/watch?v=-TX31F6BLqA";
+
+        goto label01;
+
+     label19:
+        $r5 = "http://www.youtube.com/watch?v=U-zwMPC56NY";
+
+        goto label01;
+
+     label20:
+        $r5 = "http://www.youtube.com/watch?v=HbNqVJdHlr8";
+
+        goto label01;
+
+     label21:
+        $r5 = "http://www.youtube.com/watch?v=PFCQwhtggGI";
+
+        goto label01;
+
+     label22:
+        $r5 = "http://www.youtube.com/watch?v=TI0DGvqKZTI";
+
+        goto label01;
+
+     label23:
+        $r5 = "http://www.youtube.com/watch?v=Xteny-dgr4I";
+
+        goto label01;
+
+     label24:
+        $r5 = "http://www.youtube.com/watch?v=mzX-pXIpZ6E";
+
+        goto label01;
+
+     label25:
+        $r5 = "http://www.youtube.com/watch?v=xqVDkuZWqFA";
+
+        goto label01;
+
+     label26:
+        $r5 = "http://www.youtube.com/watch?v=K5H-GvnNz2Y";
+
+        goto label01;
+
+     label27:
+        $r5 = "http://www.youtube.com/watch?v=IAyMtl9FRHI";
+
+        goto label01;
+
+     label28:
+        $r5 = "http://www.youtube.com/watch?v=Y-FhDScM_2w";
+
+        goto label01;
+
+     label29:
+        $r5 = "http://www.youtube.com/watch?v=mcVT5bGeyMs";
+
+        goto label01;
+
+     label30:
+        $r5 = "http://www.youtube.com/watch?v=D15-XYRubsc";
+
+        goto label01;
+
+     label31:
+        $r5 = "http://www.youtube.com/watch?v=flVkp4S8CMc";
+
+        goto label01;
+
+     label32:
+        $r5 = "http://www.youtube.com/watch?v=k57Dg-NqddY";
+
+        goto label01;
+
+     label33:
+        $r5 = "http://www.youtube.com/watch?v=ouR4nn1G9r4";
+
+        goto label01;
+
+     label34:
+        $r5 = "http://www.youtube.com/watch?v=0Oi8jDMvd_w";
+
+        goto label01;
+
+     label35:
+        $r5 = "http://www.youtube.com/watch?v=zvdtPC8SpME";
+
+        goto label01;
+
+     label36:
+        $r5 = "http://www.youtube.com/watch?v=zNkinODwdqk";
+
+        goto label01;
+
+     label37:
+        $r5 = "http://www.youtube.com/watch?v=cAUw383zuqk";
+
+        goto label01;
+
+     label38:
+        $r5 = "http://www.youtube.com/watch?v=Af701y7NzNM";
+
+        goto label01;
+
+     label39:
+        $r5 = "http://www.youtube.com/watch?v=_hsrsmwHv0A";
+
+        goto label01;
+
+     label40:
+        $r5 = "http://www.youtube.com/watch?v=86ZuZHLgnQY";
+
+        goto label01;
+
+     label41:
+        $r5 = "http://www.youtube.com/watch?v=cHMgThx9yTg";
+
+        goto label01;
+
+     label42:
+        $r5 = "http://www.youtube.com/watch?v=qpR7L6op944";
+
+        goto label01;
+
+     label43:
+        $r5 = "http://www.youtube.com/watch?v=qXrcNXObJRo";
+
+        goto label01;
+
+     label44:
+        $r5 = "http://www.youtube.com/watch?v=sdep8srF-w8";
+
+        goto label01;
+
+     label45:
+        $r5 = "http://www.youtube.com/watch?v=3kVz5reAyrQ";
+
+        goto label01;
+
+     label46:
+        $r5 = "http://www.youtube.com/watch?v=LySEQZAbYg4";
+
+        goto label01;
+
+     label47:
+        $r5 = "http://www.youtube.com/watch?v=EiVmQZwJhsA";
+
+        goto label01;
+
+     label48:
+        $r5 = "http://www.youtube.com/watch?v=NPvnDw2srjU";
+
+        goto label01;
+
+     label49:
+        $r5 = "http://www.youtube.com/watch?v=eISomx-Vmow";
+
+        goto label01;
+
+     label50:
+        $r5 = "http://www.youtube.com/watch?v=Y4mH2KvzUQ0";
+
+        goto label01;
+
+     label51:
+        $r5 = "http://www.youtube.com/watch?v=dhQGlshAK3k";
+
+        goto label01;
+
+     label52:
+        $r5 = "http://www.youtube.com/watch?v=dlg6DkJF3sE";
+
+        goto label01;
+    }
+}

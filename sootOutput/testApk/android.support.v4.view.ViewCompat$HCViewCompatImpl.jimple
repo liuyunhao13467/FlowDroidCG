@@ -1,0 +1,26 @@
+class android.support.v4.view.ViewCompat$HCViewCompatImpl extends android.support.v4.view.ViewCompat$GBViewCompatImpl
+{
+
+    void <init>()
+    {
+        android.support.v4.view.ViewCompat$HCViewCompatImpl $r0;
+
+        $r0 := @this: android.support.v4.view.ViewCompat$HCViewCompatImpl;
+
+        specialinvoke $r0.<android.support.v4.view.ViewCompat$GBViewCompatImpl: void <init>()>();
+
+        return;
+    }
+
+    long getFrameTime()
+    {
+        android.support.v4.view.ViewCompat$HCViewCompatImpl $r0;
+        long $l0;
+
+        $r0 := @this: android.support.v4.view.ViewCompat$HCViewCompatImpl;
+
+        $l0 = staticinvoke <android.support.v4.view.ViewCompatHC: long getFrameTime()>();
+
+        return $l0;
+    }
+}

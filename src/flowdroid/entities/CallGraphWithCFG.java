@@ -1,4 +1,4 @@
-package com.wang.flowdroid.entities;
+package flowdroid.entities;
 
 import java.io.File;
 import java.io.FileNotFoundException;

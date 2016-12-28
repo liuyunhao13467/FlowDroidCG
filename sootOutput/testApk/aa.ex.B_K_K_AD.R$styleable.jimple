@@ -1,0 +1,36 @@
+public final class aa.ex.B_K_K_AD.R$styleable extends java.lang.Object
+{
+    public static final int[] com_nbpcorp_mobilead_sdk_MobileADView;
+    public static final int com_nbpcorp_mobilead_sdk_MobileADView_channel_id;
+    public static final int com_nbpcorp_mobilead_sdk_MobileADView_test;
+
+    static void <clinit>()
+    {
+        int[] $r0;
+
+        <aa.ex.B_K_K_AD.R$styleable: int com_nbpcorp_mobilead_sdk_MobileADView_test> = 1;
+
+        <aa.ex.B_K_K_AD.R$styleable: int com_nbpcorp_mobilead_sdk_MobileADView_channel_id> = 0;
+
+        $r0 = newarray (int)[2];
+
+        $r0[0] = 2130771968;
+
+        $r0[1] = 2130771969;
+
+        <aa.ex.B_K_K_AD.R$styleable: int[] com_nbpcorp_mobilead_sdk_MobileADView> = $r0;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$styleable $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$styleable;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

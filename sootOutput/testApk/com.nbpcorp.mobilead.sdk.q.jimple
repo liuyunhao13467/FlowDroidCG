@@ -1,0 +1,105 @@
+final class com.nbpcorp.mobilead.sdk.Q extends android.webkit.WebChromeClient
+{
+    private com.nbpcorp.mobilead.sdk.x a;
+
+    void <init>(com.nbpcorp.mobilead.sdk.x)
+    {
+        com.nbpcorp.mobilead.sdk.Q $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.Q;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        $r0.<com.nbpcorp.mobilead.sdk.Q: com.nbpcorp.mobilead.sdk.x a> = $r1;
+
+        specialinvoke $r0.<android.webkit.WebChromeClient: void <init>()>();
+
+        return;
+    }
+
+    static com.nbpcorp.mobilead.sdk.x a(com.nbpcorp.mobilead.sdk.Q)
+    {
+        com.nbpcorp.mobilead.sdk.Q $r0;
+        com.nbpcorp.mobilead.sdk.x r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.Q;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.Q: com.nbpcorp.mobilead.sdk.x a>;
+
+        return r1;
+    }
+
+    public final void onConsoleMessage(java.lang.String, int, java.lang.String)
+    {
+        com.nbpcorp.mobilead.sdk.Q $r0;
+        java.lang.String $r1, $r2;
+        int $i0;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.Q;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $i0 := @parameter1: int;
+
+        $r2 := @parameter2: java.lang.String;
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("CONSOLE:");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" -- From line ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" of ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("NBPMOBILEAD", $r1);
+
+        return;
+    }
+
+    public final boolean onJsPrompt(android.webkit.WebView, java.lang.String, java.lang.String, java.lang.String, android.webkit.JsPromptResult)
+    {
+        com.nbpcorp.mobilead.sdk.Q $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3, $r4;
+        android.webkit.JsPromptResult $r5;
+        com.nbpcorp.mobilead.sdk.R $r6;
+        android.os.Handler $r7;
+        com.nbpcorp.mobilead.sdk.x $r8;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.Q;
+
+        $r1 := @parameter0: android.webkit.WebView;
+
+        $r2 := @parameter1: java.lang.String;
+
+        $r3 := @parameter2: java.lang.String;
+
+        $r4 := @parameter3: java.lang.String;
+
+        $r5 := @parameter4: android.webkit.JsPromptResult;
+
+        $r8 = $r0.<com.nbpcorp.mobilead.sdk.Q: com.nbpcorp.mobilead.sdk.x a>;
+
+        $r7 = staticinvoke <com.nbpcorp.mobilead.sdk.x: android.os.Handler f(com.nbpcorp.mobilead.sdk.x)>($r8);
+
+        $r6 = new com.nbpcorp.mobilead.sdk.R;
+
+        specialinvoke $r6.<com.nbpcorp.mobilead.sdk.R: void <init>(com.nbpcorp.mobilead.sdk.Q,java.lang.String,java.lang.String)>($r0, $r3, $r4);
+
+        virtualinvoke $r7.<android.os.Handler: boolean post(java.lang.Runnable)>($r6);
+
+        virtualinvoke $r5.<android.webkit.JsPromptResult: void confirm()>();
+
+        return 1;
+    }
+}

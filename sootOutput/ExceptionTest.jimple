@@ -1,0 +1,101 @@
+public class ExceptionTest extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0: java.lang.String[];
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int data;
+        java.io.PrintStream temp$0, temp$2, temp$3;
+        java.lang.Exception temp$1, e;
+
+        data := @parameter0: int;
+
+     label1:
+        nop;
+
+        if data > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("right?");
+
+        goto label4;
+
+     label3:
+        nop;
+
+        temp$1 = new java.lang.Exception;
+
+        specialinvoke temp$1.<java.lang.Exception: void <init>()>();
+
+        throw temp$1;
+
+     label4:
+        nop;
+
+        goto label9;
+
+     label5:
+        nop;
+
+        e := @caughtexception;
+
+        if data == 1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+
+        temp$2 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$2.<java.io.PrintStream: void println(java.lang.String)>("data = 1,in the exception!!");
+
+        goto label8;
+
+     label7:
+        nop;
+
+        temp$3 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$3.<java.io.PrintStream: void println(java.lang.String)>("data != 1,in the exception!!");
+
+     label8:
+        nop;
+
+        nop;
+
+        goto label9;
+
+     label9:
+        nop;
+
+        return;
+
+        catch java.lang.Exception from label1 to label5 with label5;
+    }
+
+    public void <init>()
+    {
+        ExceptionTest this;
+
+        this := @this: ExceptionTest;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

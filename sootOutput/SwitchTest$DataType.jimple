@@ -1,0 +1,116 @@
+public static final enum class SwitchTest$DataType extends java.lang.Enum
+{
+    public static final enum SwitchTest$DataType Max;
+    public static final enum SwitchTest$DataType Min;
+    public static final enum SwitchTest$DataType Middle;
+    private static final SwitchTest$DataType[] $VALUES;
+
+    static void <clinit>()
+    {
+        SwitchTest$DataType temp$0, temp$1, temp$2, temp$4, temp$5, temp$6;
+        SwitchTest$DataType[] temp$3;
+
+        temp$0 = new SwitchTest$DataType;
+
+        specialinvoke temp$0.<SwitchTest$DataType: void <init>(java.lang.String,int)>("Max", 0);
+
+        <SwitchTest$DataType: SwitchTest$DataType Max> = temp$0;
+
+        temp$1 = new SwitchTest$DataType;
+
+        specialinvoke temp$1.<SwitchTest$DataType: void <init>(java.lang.String,int)>("Min", 1);
+
+        <SwitchTest$DataType: SwitchTest$DataType Min> = temp$1;
+
+        temp$2 = new SwitchTest$DataType;
+
+        specialinvoke temp$2.<SwitchTest$DataType: void <init>(java.lang.String,int)>("Middle", 2);
+
+        <SwitchTest$DataType: SwitchTest$DataType Middle> = temp$2;
+
+        temp$3 = newarray (SwitchTest$DataType)[3];
+
+        temp$4 = <SwitchTest$DataType: SwitchTest$DataType Max>;
+
+        temp$3[0] = temp$4;
+
+        temp$5 = <SwitchTest$DataType: SwitchTest$DataType Min>;
+
+        temp$3[1] = temp$5;
+
+        temp$6 = <SwitchTest$DataType: SwitchTest$DataType Middle>;
+
+        temp$3[2] = temp$6;
+
+        <SwitchTest$DataType: SwitchTest$DataType[] $VALUES> = temp$3;
+
+        return;
+    }
+
+    private void <init>(java.lang.String, int)
+    {
+        SwitchTest$DataType this;
+        java.lang.String @p0;
+        int @p1;
+
+        this := @this: SwitchTest$DataType;
+
+        @p0 := @parameter0: java.lang.String;
+
+        @p1 := @parameter1: int;
+
+        specialinvoke this.<java.lang.Enum: void <init>(java.lang.String,int)>(@p0, @p1);
+
+        return;
+    }
+
+    public static final SwitchTest$DataType[] values()
+    {
+        SwitchTest$DataType[] temp$0, temp$2;
+        java.lang.Object temp$1;
+
+        temp$0 = <SwitchTest$DataType: SwitchTest$DataType[] $VALUES>;
+
+        temp$1 = virtualinvoke temp$0.<java.lang.Object: java.lang.Object clone()>();
+
+        temp$2 = (SwitchTest$DataType[]) temp$1;
+
+        return temp$2;
+    }
+
+    public static final SwitchTest$DataType valueOf(java.lang.String)
+    {
+        java.lang.String s;
+        java.lang.Class temp$0, temp$1, temp$2;
+        java.lang.Enum temp$3;
+        SwitchTest$DataType temp$4;
+
+        s := @parameter0: java.lang.String;
+
+        temp$1 = <SwitchTest: java.lang.Class class$SwitchTest$DataType>;
+
+        if temp$1 != null goto label1;
+
+        temp$2 = staticinvoke <SwitchTest: java.lang.Class class$(java.lang.String)>("SwitchTest$DataType");
+
+        <SwitchTest: java.lang.Class class$SwitchTest$DataType> = temp$2;
+
+        temp$0 = temp$2;
+
+        goto label2;
+
+     label1:
+        nop;
+
+        temp$0 = <SwitchTest: java.lang.Class class$SwitchTest$DataType>;
+
+     label2:
+        nop;
+
+        temp$3 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(temp$0, s);
+
+        temp$4 = (SwitchTest$DataType) temp$3;
+
+        return temp$4;
+    }
+}

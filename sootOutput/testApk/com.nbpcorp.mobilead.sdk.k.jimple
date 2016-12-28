@@ -1,0 +1,50 @@
+final class com.nbpcorp.mobilead.sdk.K extends java.lang.Object implements java.lang.Runnable
+{
+    private com.nbpcorp.mobilead.sdk.x a;
+
+    void <init>(com.nbpcorp.mobilead.sdk.x)
+    {
+        com.nbpcorp.mobilead.sdk.K $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.K;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        $r0.<com.nbpcorp.mobilead.sdk.K: com.nbpcorp.mobilead.sdk.x a> = $r1;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public final void run()
+    {
+        com.nbpcorp.mobilead.sdk.K $r0;
+        com.nbpcorp.mobilead.sdk.x $r1, $r2;
+        java.lang.String $r3;
+        android.webkit.WebView $r4;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.K;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.K: com.nbpcorp.mobilead.sdk.x a>;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.K: com.nbpcorp.mobilead.sdk.x a>;
+
+        $r3 = staticinvoke <com.nbpcorp.mobilead.sdk.x: java.lang.String j(com.nbpcorp.mobilead.sdk.x)>($r2);
+
+        staticinvoke <com.nbpcorp.mobilead.sdk.x: void e(com.nbpcorp.mobilead.sdk.x,java.lang.String)>($r1, $r3);
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.K: com.nbpcorp.mobilead.sdk.x a>;
+
+        $r4 = staticinvoke <com.nbpcorp.mobilead.sdk.x: android.webkit.WebView k(com.nbpcorp.mobilead.sdk.x)>($r1);
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.K: com.nbpcorp.mobilead.sdk.x a>;
+
+        $r3 = staticinvoke <com.nbpcorp.mobilead.sdk.x: java.lang.String l(com.nbpcorp.mobilead.sdk.x)>($r1);
+
+        virtualinvoke $r4.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>($r3, "text/html; charset=UTF-8", "UTF-8");
+
+        return;
+    }
+}

@@ -1,0 +1,29 @@
+final class com.nbpcorp.mobilead.sdk.J extends java.lang.Object implements android.view.View$OnLongClickListener
+{
+
+    void <init>(com.nbpcorp.mobilead.sdk.x)
+    {
+        com.nbpcorp.mobilead.sdk.J $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.J;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public final boolean onLongClick(android.view.View)
+    {
+        com.nbpcorp.mobilead.sdk.J $r0;
+        android.view.View $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.J;
+
+        $r1 := @parameter0: android.view.View;
+
+        return 0;
+    }
+}

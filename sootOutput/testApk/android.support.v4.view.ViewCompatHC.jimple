@@ -1,0 +1,23 @@
+class android.support.v4.view.ViewCompatHC extends java.lang.Object
+{
+
+    void <init>()
+    {
+        android.support.v4.view.ViewCompatHC $r0;
+
+        $r0 := @this: android.support.v4.view.ViewCompatHC;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    static long getFrameTime()
+    {
+        long $l0;
+
+        $l0 = staticinvoke <android.animation.ValueAnimator: long getFrameDelay()>();
+
+        return $l0;
+    }
+}

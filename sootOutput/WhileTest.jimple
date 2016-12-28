@@ -1,0 +1,123 @@
+public class WhileTest extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0: java.lang.String[];
+
+        return;
+    }
+
+    public static void A1()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A");
+
+        return;
+    }
+
+    public static void A2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A2");
+
+        return;
+    }
+
+    public static void A3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A3");
+
+        return;
+    }
+
+    public static void C(int)
+    {
+        int data, j, i, temp$0, temp$1, temp$2, temp$3;
+
+        data := @parameter0: int;
+
+        staticinvoke <WhileTest: void A1()>();
+
+        j = 0;
+
+     label1:
+        nop;
+
+        if j < 5 goto label2;
+
+        goto label6;
+
+     label2:
+        nop;
+
+        i = 0;
+
+     label3:
+        nop;
+
+        if i < data goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+
+        staticinvoke <WhileTest: void A2()>();
+
+        nop;
+
+        temp$0 = i;
+
+        temp$1 = temp$0 + 1;
+
+        i = temp$1;
+
+        goto label3;
+
+     label5:
+        nop;
+
+        staticinvoke <WhileTest: void A3()>();
+
+        nop;
+
+        temp$2 = j;
+
+        temp$3 = temp$2 + 1;
+
+        j = temp$3;
+
+        goto label1;
+
+     label6:
+        nop;
+
+        staticinvoke <WhileTest: void A3()>();
+
+        return;
+    }
+
+    public void <init>()
+    {
+        WhileTest this;
+
+        this := @this: WhileTest;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

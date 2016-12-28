@@ -1,0 +1,34 @@
+final class com.nbpcorp.mobilead.sdk.I extends java.lang.Object implements java.lang.Runnable
+{
+    private com.nbpcorp.mobilead.sdk.x a;
+
+    void <init>(com.nbpcorp.mobilead.sdk.x)
+    {
+        com.nbpcorp.mobilead.sdk.I $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.I;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        $r0.<com.nbpcorp.mobilead.sdk.I: com.nbpcorp.mobilead.sdk.x a> = $r1;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public final void run()
+    {
+        com.nbpcorp.mobilead.sdk.I $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.I;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.I: com.nbpcorp.mobilead.sdk.x a>;
+
+        staticinvoke <com.nbpcorp.mobilead.sdk.x: void i(com.nbpcorp.mobilead.sdk.x)>($r1);
+
+        return;
+    }
+}

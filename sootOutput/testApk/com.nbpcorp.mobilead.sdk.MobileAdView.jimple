@@ -1,0 +1,874 @@
+public final class com.nbpcorp.mobilead.sdk.MobileAdView extends android.widget.RelativeLayout
+{
+    public static boolean DEBUG;
+    public static final int ERROR_AD_LOAD;
+    public static final int ERROR_INTERNAL;
+    public static final int ERROR_INVALID_CHANNEL;
+    public static final int ERROR_INVALID_MEDIA;
+    public static final int ERROR_INVALID_PARAMETER;
+    public static final int ERROR_INVALID_REGION;
+    public static final int ERROR_INVALID_REQUEST;
+    public static final int ERROR_INVALID_STATE;
+    public static final int ERROR_NETWORK;
+    public static final int ERROR_NO_ADS;
+    public static final int ERROR_SUCCESS;
+    public static final int ERROR_UNKNOWN;
+    public static final int ERROR_WAIT_FOR_APPROVAL;
+    public static final java.lang.String MOBILEAD_SDK_JS;
+    public static final java.lang.String MOBILEAD_SDK_VERSION;
+    private static com.nbpcorp.mobilead.sdk.x c;
+    private android.content.Context a;
+    private com.nbpcorp.mobilead.sdk.w b;
+    private int d;
+    private int e;
+
+    static void <clinit>()
+    {
+        <com.nbpcorp.mobilead.sdk.MobileAdView: java.lang.String MOBILEAD_SDK_VERSION> = "1.3.0";
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: java.lang.String MOBILEAD_SDK_JS> = "http://adimg3.search.naver.net/mobilejs/mobilead_sdk2_min.js";
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_WAIT_FOR_APPROVAL> = 104;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_UNKNOWN> = -1;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_SUCCESS> = 0;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_NO_ADS> = 103;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_NETWORK> = 3;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INVALID_STATE> = 5;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INVALID_REQUEST> = 102;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INVALID_REGION> = 4;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INVALID_PARAMETER> = 2;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INVALID_MEDIA> = 105;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INVALID_CHANNEL> = 106;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_INTERNAL> = 101;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: int ERROR_AD_LOAD> = 1;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: boolean DEBUG> = 0;
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c> = null;
+
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: android.content.Context;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, null, 0);
+
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.util.AttributeSet;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, $r2, 0);
+
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet, int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0, $i1;
+        java.lang.String $r3, $r5;
+        boolean $z0, $z1, $z2, $z3;
+        com.nbpcorp.mobilead.sdk.x $r4;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.util.AttributeSet;
+
+        $i0 := @parameter2: int;
+
+        specialinvoke $r0.<android.widget.RelativeLayout: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, $r2, $i0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a> = null;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int d> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int e> = 0;
+
+        $r3 = "";
+
+        if $r2 == null goto label9;
+
+        $i0 = 0;
+
+        $z0 = 0;
+
+        $z1 = 0;
+
+        $z2 = 0;
+
+     label1:
+        $i1 = interfaceinvoke $r2.<android.util.AttributeSet: int getAttributeCount()>();
+
+        if $i0 < $i1 goto label3;
+
+     label2:
+        if $z2 == 0 goto label6;
+
+        if $z1 == 0 goto label6;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void a(android.content.Context)>($r1);
+
+        $r4 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.x: void a(java.lang.String)>($r3);
+
+        $r4 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.x: void a(boolean)>($z0);
+
+        return;
+
+     label3:
+        $r5 = interfaceinvoke $r2.<android.util.AttributeSet: java.lang.String getAttributeName(int)>($i0);
+
+        $z3 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("channel_id");
+
+        if $z3 == 0 goto label4;
+
+        $r3 = interfaceinvoke $r2.<android.util.AttributeSet: java.lang.String getAttributeValue(int)>($i0);
+
+        $z2 = 1;
+
+     label4:
+        $z3 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("test");
+
+        if $z3 == 0 goto label5;
+
+        $z0 = interfaceinvoke $r2.<android.util.AttributeSet: boolean getAttributeBooleanValue(int,boolean)>($i0, 0);
+
+        $z1 = 1;
+
+     label5:
+        $i0 = $i0 + 1;
+
+        goto label1;
+
+     label6:
+        if $z2 == 0 goto label7;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void a(android.content.Context)>($r1);
+
+        $r4 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.x: void a(java.lang.String)>($r3);
+
+        return;
+
+     label7:
+        if $z1 == 0 goto label8;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void a(android.content.Context)>($r1);
+
+        $r4 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.x: void a(boolean)>($z0);
+
+        return;
+
+     label8:
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void a(android.content.Context)>($r1);
+
+        return;
+
+     label9:
+        $z0 = 0;
+
+        $z1 = 0;
+
+        $z2 = 0;
+
+        goto label2;
+    }
+
+    static android.content.Context a(com.nbpcorp.mobilead.sdk.MobileAdView)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.content.Context r1;
+
+        $r0 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a>;
+
+        return r1;
+    }
+
+    static com.nbpcorp.mobilead.sdk.x a()
+    {
+        com.nbpcorp.mobilead.sdk.x r0;
+
+        r0 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        return r0;
+    }
+
+    private void a(android.content.Context)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.content.Context $r1, $r2;
+        android.content.pm.PackageManager $r3;
+        java.lang.String $r4;
+        int $i0;
+        java.lang.SecurityException $r5;
+        com.nbpcorp.mobilead.sdk.x $r6;
+        android.view.ViewParent $r7;
+        android.widget.RelativeLayout $r8;
+        com.nbpcorp.mobilead.sdk.w $r9;
+        java.lang.Throwable $r10;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a> = $r1;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a>;
+
+        $r3 = virtualinvoke $r2.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a>;
+
+        $r4 = virtualinvoke $r2.<android.content.Context: java.lang.String getPackageName()>();
+
+        $i0 = virtualinvoke $r3.<android.content.pm.PackageManager: int checkPermission(java.lang.String,java.lang.String)>("android.permission.INTERNET", $r4);
+
+        if $i0 != 0 goto label1;
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a>;
+
+        $r3 = virtualinvoke $r2.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+
+        $r2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a>;
+
+        $r4 = virtualinvoke $r2.<android.content.Context: java.lang.String getPackageName()>();
+
+        $i0 = virtualinvoke $r3.<android.content.pm.PackageManager: int checkPermission(java.lang.String,java.lang.String)>("android.permission.ACCESS_NETWORK_STATE", $r4);
+
+        if $i0 == 0 goto label2;
+
+     label1:
+        $r5 = new java.lang.SecurityException;
+
+        specialinvoke $r5.<java.lang.SecurityException: void <init>(java.lang.String)>("Permission is not set");
+
+        throw $r5;
+
+     label2:
+        entermonitor class "com/nbpcorp/mobilead/sdk/MobileAdView";
+
+     label3:
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        if $r6 != null goto label4;
+
+        $r6 = new com.nbpcorp.mobilead.sdk.x;
+
+        $r1 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+
+        specialinvoke $r6.<com.nbpcorp.mobilead.sdk.x: void <init>(android.content.Context)>($r1);
+
+        <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c> = $r6;
+
+     label4:
+        exitmonitor class "com/nbpcorp/mobilead/sdk/MobileAdView";
+
+     label5:
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r7 = virtualinvoke $r6.<com.nbpcorp.mobilead.sdk.x: android.view.ViewParent getParent()>();
+
+        if $r7 == null goto label6;
+
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r7 = virtualinvoke $r6.<com.nbpcorp.mobilead.sdk.x: android.view.ViewParent getParent()>();
+
+        $r8 = (android.widget.RelativeLayout) $r7;
+
+        virtualinvoke $r8.<android.widget.RelativeLayout: void removeAllViews()>();
+
+     label6:
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void addView(android.view.View)>($r6);
+
+        $r9 = new com.nbpcorp.mobilead.sdk.w;
+
+        specialinvoke $r9.<com.nbpcorp.mobilead.sdk.w: void <init>(com.nbpcorp.mobilead.sdk.MobileAdView)>($r0);
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.w b> = $r9;
+
+        return;
+
+     label7:
+        $r10 := @caughtexception;
+
+        exitmonitor class "com/nbpcorp/mobilead/sdk/MobileAdView";
+
+        throw $r10;
+
+        catch java.lang.Throwable from label3 to label5 with label7;
+    }
+
+    public final void addInfo(java.lang.String, java.lang.String)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        java.lang.String $r1, $r2;
+        com.nbpcorp.mobilead.sdk.x $r3;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: java.lang.String;
+
+        $r3 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r3.<com.nbpcorp.mobilead.sdk.x: void a(java.lang.String,java.lang.String)>($r1, $r2);
+
+        return;
+    }
+
+    public final void destroy()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        com.nbpcorp.mobilead.sdk.w $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void removeAllViews()>();
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.w b>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.w: void b()>();
+
+        return;
+    }
+
+    public final java.lang.String getChannelID()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        java.lang.String $r1;
+        com.nbpcorp.mobilead.sdk.x $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r1 = virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: java.lang.String a()>();
+
+        return $r1;
+    }
+
+    public final int getThreadPriority()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        int $i0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $i0 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: int g()>();
+
+        return $i0;
+    }
+
+    public final android.webkit.WebSettings$RenderPriority getWebViewRenderPriority()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.webkit.WebSettings$RenderPriority $r1;
+        com.nbpcorp.mobilead.sdk.x $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r1 = virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: android.webkit.WebSettings$RenderPriority h()>();
+
+        return $r1;
+    }
+
+    public final boolean isAdAvailable()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $z0 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: boolean c()>();
+
+        return $z0;
+    }
+
+    public final boolean isAutoRefresh()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $z0 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: boolean d()>();
+
+        return $z0;
+    }
+
+    public final boolean isTest()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $z0 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: boolean b()>();
+
+        return $z0;
+    }
+
+    protected final void onLayout(boolean, int, int, int, int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        boolean $z0;
+        int $i0, $i1, $i2, $i3;
+        com.nbpcorp.mobilead.sdk.x $r1, $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $z0 := @parameter0: boolean;
+
+        $i0 := @parameter1: int;
+
+        $i1 := @parameter2: int;
+
+        $i2 := @parameter3: int;
+
+        $i3 := @parameter4: int;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $i0 = virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: int e()>();
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $i1 = virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: int f()>();
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void layout(int,int,int,int)>(0, 0, $i0, $i1);
+
+        return;
+    }
+
+    protected final void onMeasure(int, int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5;
+        android.content.Context $r1;
+        java.lang.Object $r2;
+        android.view.WindowManager $r3;
+        android.view.Display $r4;
+        android.util.DisplayMetrics $r5;
+        float $f0;
+        com.nbpcorp.mobilead.sdk.x $r6;
+        boolean $z0;
+        java.lang.StringBuilder $r7;
+        java.lang.String $r8;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $i0 := @parameter0: int;
+
+        $i1 := @parameter1: int;
+
+        $r1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: android.content.Context a>;
+
+        $r2 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("window");
+
+        $r3 = (android.view.WindowManager) $r2;
+
+        $r4 = interfaceinvoke $r3.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        $r5 = new android.util.DisplayMetrics;
+
+        specialinvoke $r5.<android.util.DisplayMetrics: void <init>()>();
+
+        virtualinvoke $r4.<android.view.Display: void getMetrics(android.util.DisplayMetrics)>($r5);
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 320.0F;
+
+        $i2 = (int) $f0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int d> = $i2;
+
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $f0 = 50.0F * $f0;
+
+        $i2 = (int) $f0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int e> = $i2;
+
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $i2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int e>;
+
+        virtualinvoke $r6.<com.nbpcorp.mobilead.sdk.x: void b(int)>($i2);
+
+        $i2 = staticinvoke <android.view.View$MeasureSpec: int getMode(int)>($i0);
+
+        lookupswitch($i2)
+        {
+            case -2147483648: goto label09;
+            case 0: goto label09;
+            case 1073741824: goto label10;
+            default: goto label01;
+        };
+
+     label01:
+        $i3 = 0;
+
+     label02:
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r6.<com.nbpcorp.mobilead.sdk.x: void a(int)>($i3);
+
+        $i4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int e>;
+
+        virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void setMeasuredDimension(int,int)>($i3, $i4);
+
+        $i3 = staticinvoke <android.view.View$MeasureSpec: int getMode(int)>($i1);
+
+        $i4 = staticinvoke <android.view.View$MeasureSpec: int getSize(int)>($i0);
+
+        $i0 = $i4;
+
+        $i5 = staticinvoke <android.view.View$MeasureSpec: int getSize(int)>($i1);
+
+        $i1 = $i5;
+
+        $z0 = <com.nbpcorp.mobilead.sdk.MobileAdView: boolean DEBUG>;
+
+        if $z0 == 0 goto label03;
+
+        $r7 = new java.lang.StringBuilder;
+
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("MeasureSpec-Width(");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("):");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", Height(");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("):");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("NBPMOBILEAD", $r8);
+
+     label03:
+        if $i2 == 0 goto label04;
+
+        if $i4 != 0 goto label05;
+
+     label04:
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int d>;
+
+     label05:
+        if $i3 == 0 goto label06;
+
+        if $i5 != 0 goto label07;
+
+     label06:
+        $i1 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int e>;
+
+     label07:
+        $i2 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int d>;
+
+        if $i0 < $i2 goto label08;
+
+        $i0 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: int e>;
+
+        if $i1 >= $i0 goto label11;
+
+     label08:
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r6.<com.nbpcorp.mobilead.sdk.x: void e(boolean)>(0);
+
+        return;
+
+     label09:
+        $f0 = $r5.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 320.0F;
+
+        $i3 = (int) $f0;
+
+        goto label02;
+
+     label10:
+        $i3 = staticinvoke <android.view.View$MeasureSpec: int getSize(int)>($i0);
+
+        goto label02;
+
+     label11:
+        $r6 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r6.<com.nbpcorp.mobilead.sdk.x: void e(boolean)>(1);
+
+        return;
+    }
+
+    protected final void onWindowVisibilityChanged(int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        int $i0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+        android.view.ViewParent $r2;
+        android.widget.RelativeLayout $r3;
+        com.nbpcorp.mobilead.sdk.w $r4;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $i0 := @parameter0: int;
+
+        specialinvoke $r0.<android.widget.RelativeLayout: void onWindowVisibilityChanged(int)>($i0);
+
+        if $i0 != 0 goto label2;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r2 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: android.view.ViewParent getParent()>();
+
+        if $r2 == null goto label1;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r2 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: android.view.ViewParent getParent()>();
+
+        if $r2 == $r0 goto label1;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r2 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: android.view.ViewParent getParent()>();
+
+        $r3 = (android.widget.RelativeLayout) $r2;
+
+        virtualinvoke $r3.<android.widget.RelativeLayout: void removeAllViews()>();
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: void addView(android.view.View)>($r1);
+
+     label1:
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void b(boolean)>(1);
+
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.w b>;
+
+        virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.w: void a()>();
+
+        return;
+
+     label2:
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        $r2 = virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: android.view.ViewParent getParent()>();
+
+        if $r2 != $r0 goto label3;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void c(boolean)>(1);
+
+     label3:
+        $r4 = $r0.<com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.w b>;
+
+        virtualinvoke $r4.<com.nbpcorp.mobilead.sdk.w: void b()>();
+
+        return;
+    }
+
+    public final void setChannelID(java.lang.String)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        java.lang.String $r1;
+        com.nbpcorp.mobilead.sdk.x $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: void a(java.lang.String)>($r1);
+
+        return;
+    }
+
+    public final void setListener(com.nbpcorp.mobilead.sdk.MobileAdListener)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        com.nbpcorp.mobilead.sdk.MobileAdListener $r1;
+        com.nbpcorp.mobilead.sdk.x $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.MobileAdListener;
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: void a(com.nbpcorp.mobilead.sdk.MobileAdListener)>($r1);
+
+        return;
+    }
+
+    public final void setTest(boolean)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $z0 := @parameter0: boolean;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void a(boolean)>($z0);
+
+        return;
+    }
+
+    public final void setThreadPriority(int)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        int $i0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $i0 := @parameter0: int;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void c(int)>($i0);
+
+        return;
+    }
+
+    public final void setWebViewRenderPriority(android.webkit.WebSettings$RenderPriority)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        android.webkit.WebSettings$RenderPriority $r1;
+        com.nbpcorp.mobilead.sdk.x $r2;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 := @parameter0: android.webkit.WebSettings$RenderPriority;
+
+        $r2 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r2.<com.nbpcorp.mobilead.sdk.x: void a(android.webkit.WebSettings$RenderPriority)>($r1);
+
+        return;
+    }
+
+    public final void start()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void b(boolean)>(0);
+
+        return;
+    }
+
+    public final void stop()
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void c(boolean)>(0);
+
+        return;
+    }
+
+    public final void useAnimation(boolean)
+    {
+        com.nbpcorp.mobilead.sdk.MobileAdView $r0;
+        boolean $z0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.MobileAdView;
+
+        $z0 := @parameter0: boolean;
+
+        $r1 = <com.nbpcorp.mobilead.sdk.MobileAdView: com.nbpcorp.mobilead.sdk.x c>;
+
+        virtualinvoke $r1.<com.nbpcorp.mobilead.sdk.x: void d(boolean)>($z0);
+
+        return;
+    }
+}

@@ -1,0 +1,22 @@
+public final class aa.ex.B_K_K_AD.R$layout extends java.lang.Object
+{
+    public static final int main;
+
+    public void <init>()
+    {
+        aa.ex.B_K_K_AD.R$layout $r0;
+
+        $r0 := @this: aa.ex.B_K_K_AD.R$layout;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <aa.ex.B_K_K_AD.R$layout: int main> = 2130903040;
+
+        return;
+    }
+}

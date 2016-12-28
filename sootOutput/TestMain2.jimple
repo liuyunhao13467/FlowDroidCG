@@ -1,0 +1,210 @@
+public class TestMain2 extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0: java.lang.String[];
+
+        staticinvoke <TestMain2: void C(int)>(1);
+
+        return;
+    }
+
+    public static void A1()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A");
+
+        return;
+    }
+
+    public static void A2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A2");
+
+        return;
+    }
+
+    public static void B2()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside B2");
+
+        return;
+    }
+
+    public static void A3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside A3");
+
+        return;
+    }
+
+    public static void B3()
+    {
+        java.io.PrintStream temp$0;
+
+        temp$0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("inside B3");
+
+        return;
+    }
+
+    public static int getCount(int)
+    {
+        int i, temp$0;
+
+        i := @parameter0: int;
+
+        temp$0 = i * 5;
+
+        return temp$0;
+    }
+
+    public static void C(int)
+    {
+        int i, temp$0, temp$1, temp$4, j, temp$6, temp$7, temp$8, temp$11, data;
+        double temp$2, temp$3, temp$9, temp$10;
+        java.io.PrintStream temp$5, temp$12;
+
+        i := @parameter0: int;
+
+        temp$0 = staticinvoke <TestMain2: int getCount(int)>(i);
+
+        i = temp$0;
+
+        staticinvoke <TestMain2: void A1()>();
+
+        staticinvoke <TestMain2: void B2()>();
+
+        temp$1 = 2 * i;
+
+        temp$2 = (double) temp$1;
+
+        temp$3 = temp$2 + 0.5;
+
+        temp$4 = temp$3 cmpl 1.0;
+
+        if temp$4 <= 0 goto label06;
+
+        goto label01;
+
+     label01:
+        nop;
+
+        if i < 5 goto label02;
+
+        goto label06;
+
+        goto label02;
+
+     label02:
+        nop;
+
+        staticinvoke <TestMain2: void A2()>();
+
+        j = 0;
+
+     label03:
+        nop;
+
+        if j < i goto label04;
+
+        goto label05;
+
+     label04:
+        nop;
+
+        temp$5 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$5.<java.io.PrintStream: void println(java.lang.String)>("in the cycle");
+
+        nop;
+
+        temp$6 = i;
+
+        temp$7 = temp$6 + 1;
+
+        i = temp$7;
+
+        goto label03;
+
+     label05:
+        nop;
+
+        goto label10;
+
+     label06:
+        nop;
+
+        staticinvoke <TestMain2: void B2()>();
+
+        temp$8 = 2 * i;
+
+        temp$9 = (double) temp$8;
+
+        temp$10 = temp$9 + 0.5;
+
+        temp$11 = temp$10 cmpg 0.0;
+
+        if temp$11 >= 0 goto label08;
+
+        goto label07;
+
+     label07:
+        nop;
+
+        staticinvoke <TestMain2: void A3()>();
+
+        staticinvoke <TestMain2: void A2()>();
+
+        goto label09;
+
+     label08:
+        nop;
+
+        staticinvoke <TestMain2: void B3()>();
+
+     label09:
+        nop;
+
+     label10:
+        nop;
+
+        data = 0;
+
+        temp$12 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke temp$12.<java.io.PrintStream: void println(java.lang.String)>("hello world!!");
+
+        return;
+    }
+
+    public void <init>()
+    {
+        TestMain2 this;
+
+        this := @this: TestMain2;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

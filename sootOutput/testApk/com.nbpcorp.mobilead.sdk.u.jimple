@@ -1,0 +1,64 @@
+final class com.nbpcorp.mobilead.sdk.U extends java.lang.Object
+{
+    java.lang.String a;
+    java.lang.String b;
+    java.lang.String c;
+    java.lang.String d;
+    java.lang.String e;
+    int f;
+    int g;
+    java.lang.String h;
+    java.lang.String i;
+    java.lang.String j;
+
+    private void <init>(com.nbpcorp.mobilead.sdk.x)
+    {
+        com.nbpcorp.mobilead.sdk.U $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.U;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String a> = "Android";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String b> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String c> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String d> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String e> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: int f> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: int g> = 0;
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String h> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String i> = "";
+
+        $r0.<com.nbpcorp.mobilead.sdk.U: java.lang.String j> = "";
+
+        return;
+    }
+
+    void <init>(com.nbpcorp.mobilead.sdk.x, byte)
+    {
+        com.nbpcorp.mobilead.sdk.U $r0;
+        com.nbpcorp.mobilead.sdk.x $r1;
+        byte $b0;
+
+        $r0 := @this: com.nbpcorp.mobilead.sdk.U;
+
+        $r1 := @parameter0: com.nbpcorp.mobilead.sdk.x;
+
+        $b0 := @parameter1: byte;
+
+        specialinvoke $r0.<com.nbpcorp.mobilead.sdk.U: void <init>(com.nbpcorp.mobilead.sdk.x)>($r1);
+
+        return;
+    }
+}

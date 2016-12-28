@@ -1,4 +1,4 @@
-package com.wang.flowdroid.entities;
+package flowdroid.entities;
 
 import java.util.List;
 

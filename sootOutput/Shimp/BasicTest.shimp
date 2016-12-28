@@ -1,0 +1,42 @@
+public class BasicTest extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+
+        args := @parameter0;
+
+        return;
+    }
+
+    public static void C()
+    {
+        int i, j, temp$0, temp$1, temp$2, temp$3;
+
+        temp$0 = 2;
+
+        i = temp$0;
+
+        temp$1 = 2 * i;
+
+        temp$2 = temp$1;
+
+        temp$3 = temp$2 + 8;
+
+        j = temp$3;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        BasicTest this;
+
+        this := @this;
+
+        specialinvoke this.<init>();
+
+        return;
+    }
+}
