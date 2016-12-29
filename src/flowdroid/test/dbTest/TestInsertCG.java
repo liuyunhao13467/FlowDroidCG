@@ -6,7 +6,10 @@ import java.sql.SQLException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import flowdroid.db.MySQLCor;
+import flowdroid.parser.callgraph.CallGraphParser;
 import flowdroid.test.GetOneApkCGTest;
+import soot.Scene;
+import soot.jimple.toolkits.callgraph.CallGraph;
 
 public class TestInsertCG {
 	public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/graph_cfg";
@@ -19,6 +22,7 @@ public class TestInsertCG {
 	public static void main(String[] args) throws SQLException, IOException, XmlPullParserException {
 			MySQLCor mysql = new MySQLCor(DB_URL_LOCAL, USER_NAME,USER_PWD);
 			GetOneApkCGTest.init(jarPath,apk);
-			
+			CallGraph cg = Scene.v().getCallGraph();
+			CallGraphParser.seeCallGraph(cg);
 	}
 }

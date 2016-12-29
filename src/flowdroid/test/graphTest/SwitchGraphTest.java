@@ -2,7 +2,7 @@ package flowdroid.test.graphTest;
 
 import java.util.List;
 
-import flowdroid.tools.dotGraphTools.Method2Graph;
+import flowdroid.utils.graphUtils.Method2Graph;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;

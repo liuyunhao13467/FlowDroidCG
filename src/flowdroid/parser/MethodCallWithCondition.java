@@ -10,8 +10,8 @@ import java.util.Set;
 import flowdroid.entities.Method;
 import flowdroid.entities.graph.MyBriefUnitGraph;
 import flowdroid.entities.graph.UnitGraphForTopology;
-import flowdroid.tools.ParserTools.CallGraphParserTools;
-import flowdroid.tools.dotGraphTools.Method2Graph;
+import flowdroid.utils.CallGraphTools;
+import flowdroid.utils.graphUtils.Method2Graph;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.InvokeStmt;
@@ -102,13 +102,13 @@ public class MethodCallWithCondition {
 					//前驱如果是分支语句，需要确定此语句所在的分支处的控制流。
 					if((Stmt)pre instanceof JIfStmt){
 						conditionSb.append("(")
-						.append(CallGraphParserTools.addIfCondition(unit2Conditions.get(pre), (Stmt)pre,(Stmt)unit))
+						.append(CallGraphTools.addIfCondition(unit2Conditions.get(pre), (Stmt)pre,(Stmt)unit))
 						.append(")");
 						
 					}else if(pre instanceof SwitchStmt){
 							try {
 								conditionSb.append("(")
-								.append(CallGraphParserTools.addSwitchCondition(unit2Conditions.get(pre), (Stmt)pre,(Stmt)unit))
+								.append(CallGraphTools.addSwitchCondition(unit2Conditions.get(pre), (Stmt)pre,(Stmt)unit))
 								.append(")");
 							} catch (Exception e) {
 								e.printStackTrace();

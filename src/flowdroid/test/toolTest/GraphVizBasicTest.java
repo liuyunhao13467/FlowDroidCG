@@ -3,8 +3,8 @@ package flowdroid.test.toolTest;
 import java.io.File;
 import java.io.IOException;
 
-import flowdroid.tools.dotGraphTools.GraphViz;
-import flowdroid.tools.dotGraphTools.Method2Graph;
+import flowdroid.utils.graphUtils.GraphViz;
+import flowdroid.utils.graphUtils.Method2Graph;
 
 public class GraphVizBasicTest {
 

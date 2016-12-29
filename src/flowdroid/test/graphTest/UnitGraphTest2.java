@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 import flowdroid.entities.graph.MyBriefUnitGraph;
 import flowdroid.parser.MethodCallWithCondition;
-import flowdroid.tools.dotGraphTools.Method2Graph;
 import flowdroid.utils.Unit2GexfUtils;
+import flowdroid.utils.graphUtils.Method2Graph;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;

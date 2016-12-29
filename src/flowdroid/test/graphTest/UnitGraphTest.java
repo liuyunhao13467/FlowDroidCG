@@ -12,8 +12,8 @@ import java.util.Set;
 
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.graph.UnitGraphForTopology;
-import flowdroid.tools.ParserTools.CallGraphParserTools;
-import flowdroid.tools.dotGraphTools.Method2Graph;
+import flowdroid.utils.CallGraphTools;
+import flowdroid.utils.graphUtils.Method2Graph;
 import soot.Body;
 import soot.PatchingChain;
 import soot.PhaseOptions;
@@ -141,7 +141,7 @@ public class UnitGraphTest {
 		UnitGraph ug = new BriefUnitGraph(body);
 		PatchingChain<Unit> units = method.retrieveActiveBody().getUnits();
 		for (Unit u : units) {
-			if (!CallGraphParserTools.isIfOrSwitch((Stmt) u) && !((Stmt) u instanceof InvokeStmt)) {
+			if (!CallGraphTools.isIfOrSwitch((Stmt) u) && !((Stmt) u instanceof InvokeStmt)) {
 				//进行结点的处理。
 				dropUnit(ug, u);
 				// 记录待删除条件信息
@@ -223,7 +223,7 @@ public class UnitGraphTest {
 					//前驱如果是分支语句，需要确定此语句所在的分支处的控制流。
 					if((Stmt)pre instanceof JIfStmt){
 						conditionSb.append("(")
-						.append(CallGraphParserTools.addIfCondition(unit2Conditions.get(pre), (Stmt)pre,(Stmt)unit))
+						.append(CallGraphTools.addIfCondition(unit2Conditions.get(pre), (Stmt)pre,(Stmt)unit))
 						.append(")");
 						
 					}else if((Stmt)unit instanceof JTableSwitchStmt){
