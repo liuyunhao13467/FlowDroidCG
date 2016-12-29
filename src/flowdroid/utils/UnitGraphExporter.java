@@ -109,10 +109,14 @@ public class UnitGraphExporter {
 		}
 	}
 	
+	public void setIdForUG(UnitGraph ug){
+		setIdForUG(ug,this.unit2Id,this.edges);
+	}
+	
 	/*
 	 * 为语句以及语句之间的关系，分配id.
 	 */
-	public void setIdForUG(UnitGraph ug) {
+	public static void setIdForUG(UnitGraph ug,Map<Unit, Integer> unit2Id,List<MyEdge> edges) {
 		Integer nodeIp = 1;
 		Integer edgeIp = 1;
 

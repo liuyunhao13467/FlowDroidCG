@@ -14,7 +14,10 @@ import flowdroid.entities.MyEdge;
 import soot.Unit;
 import soot.toolkits.graph.UnitGraph;
 
-public class Unit2XmlUtils {
+/*
+ * 用来将一个UnitGraph生成相应的gexf文件。
+ */
+public class Unit2GexfUtils {
 
 	public static void exportUnitGraphGexf(UnitGraph ug,String path){
 		Map<Unit,Integer> unitIps = new HashMap<>();
@@ -72,7 +75,6 @@ public class Unit2XmlUtils {
 		buff.append("<attribute default=\"normal\" id=\"5\" title=\"permissions_level\" type=\"string\"/>\n");
 		buff.append("<attribute default=\"false\" id=\"6\" title=\"dynamic_code\" type=\"boolean\"/>\n");
 		buff.append("</attributes>\n" );
-		
 		buff.append("<nodes>\n");
 		for(Unit unit : unitIps.keySet()){
 			buff.append(String.format("<node id=\"%d\" label=\"%s\">\n", unitIps.get(unit),suitXmlFormat(unit.toString())));
@@ -86,11 +88,8 @@ public class Unit2XmlUtils {
 			buff.append(String.format("<edge id=\"%d\" source=\"%d\" target=\"%d\"/>\n", myEdge.getIp(),myEdge.getSrc(),myEdge.getTgt()));
 		}
 		buff.append("</edges>\n");
-		
-		
 		buff.append("</graph>\n");
 		buff.append("</gexf>");
-		
 		return buff;
 	}
 	
@@ -99,7 +98,6 @@ public class Unit2XmlUtils {
 	 * 使用实体对其进行替换。
 	 */
 	public static String suitXmlFormat(String data){
-		
 		data = data.replaceAll("<", "&lt;");
 		data = data.replaceAll(">", "&gt;");
 		data = data.replaceAll("&", "&amp;");

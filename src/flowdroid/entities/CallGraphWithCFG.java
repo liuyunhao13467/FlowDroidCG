@@ -49,49 +49,4 @@ public class CallGraphWithCFG {
 		}
 	}
 
-	/**TODO 是否需要移动到其他地方 ？？？
-	 * 为call graph分配id,包括为方法分配id,为边分配id.
-	 * @param cg
-	 */
-	public void setIdForCG(Map<SootMethod, Integer> method2Id,
-			List<MyEdge> myEdges) {
-		int nodeId = 0;// 用来表示结点的id.
-		int edgeId = 0;// 用来表示边的id.
-
-		Iterator<MethodCallWithCondition> edgeIt = methodsWithConditions.iterator();
-		while (edgeIt.hasNext()) {
-			MethodCallWithCondition mcc = edgeIt.next();
-			SootMethod src = mcc.getCaller();
-			Map<SootMethod, StringBuilder> tgts = mcc.getConditions();
-			Integer srcId;
-			Integer tgtId;
-			
-			// 为调用者节点分配 id 。
-			if (method2Id.containsKey(src)) {
-				srcId = method2Id.get(src);
-			} else {
-				srcId = nodeId++;
-				method2Id.put(src, srcId);
-			}
-			//为被调用者结点分配id 。
-			Iterator<SootMethod> tgtIt = tgts.keySet().iterator();
-			SootMethod tgt;
-			while (tgtIt.hasNext()) {
-				tgt = tgtIt.next();
-
-				if (method2Id.containsKey(tgt)) {
-					tgtId = method2Id.get(tgt);
-				} else {
-					tgtId = nodeId++;
-					method2Id.put(tgt, tgtId);
-				}
-				// 为边分配id。
-				MyEdge tmpEdge =  new MyEdge(edgeId++, srcId, tgtId);
-				tmpEdge.setConditions(tgts.get(tgt));
-				myEdges.add(tmpEdge);
-				
-			}
-		}
-	}
-
 }

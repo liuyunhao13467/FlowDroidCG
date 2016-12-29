@@ -25,12 +25,12 @@ public class LCAOfBlockGraph {
 			}
 		}
 		
-		BlockGraphWithCondition.initVarForLCA();
-		BlockGraphWithCondition.findLCA(bg, bg.getHeads().get(0),todo, bg.getPredsOf(todo));
+//		BlockGraphWithCondition.initVarForLCA();
+//		BlockGraphWithCondition.findLCA(bg, bg.getHeads().get(0),todo, bg.getPredsOf(todo));
 		System.out.println("src is :");
 		System.out.println(todo);
 		System.out.println("result is : ");
-		System.out.println(BlockGraphWithCondition.getLCA());
+//		System.out.println(BlockGraphWithCondition.getLCA());
 		
 	}
 

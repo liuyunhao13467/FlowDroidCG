@@ -13,14 +13,21 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import flowdroid.entities.MyEdge;
+import flowdroid.utils.UnitGraphExporter;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Unit;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
+import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.toolkits.graph.UnitGraph;
 
 public class MySQLCor {
 
@@ -216,15 +223,17 @@ public class MySQLCor {
 		}
 	}
 	
+	/*
+	 * 插入一个class的jimple文件到数据库中。
+	 */
 	public void insertOneClassJimple(File oneClass,ProcessManifest manifest) throws SQLException, FileNotFoundException{
-		//TODO
 		String sql_jimple = "insert into apk_jimple(apk_name,apk_version,package_name,class_name,jimple) "
 				+ "values(?,?,?,?,?)";
 		PreparedStatement prestmt = con.prepareStatement(sql_jimple);
 		String apkName = manifest.getPackageName();
 		String apkVersion = manifest.getVersionName();
 		String className = oneClass.getName().substring(0, oneClass.getName().indexOf(".jimple"));
-		String packageName = className.substring(className.lastIndexOf("."));
+		String packageName = className.substring(0,className.lastIndexOf("."));
 		InputStream outputJimple = new FileInputStream(oneClass);
 		System.out.println("正在准备插入应用 " + apkName + "_" + apkVersion +"的jimple文件 : " + oneClass.getName());
 		
@@ -241,6 +250,56 @@ public class MySQLCor {
 		System.out.println("插入边消耗时间 ： " + (endTime -startTime) + " 毫秒 ");
 	}
 	
+	
+	/*
+	 * 将UnitGraph插入到数据库中。
+	 */
+	public void insertOneUnitGraph(UnitGraph ug,Map<SootMethod,Integer> method2Ip,ProcessManifest manifest) throws SQLException{
+		String insert_units = "insert into apk_method_unit (apk_name,apk_version,mid,unit_id,unit_content,unit_type) "
+				+ "values(?,?,?,?,?,?)";
+		
+		String insert_units_relation = "insert into unit_edge (apk_name,apk_version,mid,pre_unit_id,succ_unit_id) "
+				+ "values(?,?,?,?,?)";
+		
+		String apkName = manifest.getPackageName();
+		String apkVersion = manifest.getVersionName();
+		int mid = method2Ip.get(ug.getBody().getMethod());
+		//设置ip
+		Map<Unit, Integer> unit2Id = new HashMap<>();
+		List<MyEdge> myEdges = new ArrayList<>();
+		UnitGraphExporter.setIdForUG(ug,unit2Id,myEdges);
+		
+		System.out.println("正在准备插入 其语句的方法为: " + ug.getBody().getMethod());
+		double startTime = System.currentTimeMillis();
+		//插入结点
+		PreparedStatement prestmt = con.prepareStatement(insert_units);
+		for(Iterator<Unit> units = unit2Id.keySet().iterator(); units.hasNext();){
+			Unit current = units.next();
+			prestmt.setString(1, apkName);
+			prestmt.setString(2, apkVersion);
+			prestmt.setInt(3, mid);
+			prestmt.setInt(4, unit2Id.get(current));
+			prestmt.setString(5, current.toString());
+			prestmt.setString(6, current.getClass().getName());
+			prestmt.addBatch();
+		}
+		prestmt.executeBatch();
+		
+		//插入边的信息
+		prestmt = con.prepareStatement(insert_units);
+		for(MyEdge myEdge : myEdges){
+			prestmt.setString(1, apkName);
+			prestmt.setString(2, apkVersion);
+			prestmt.setInt(3, mid);
+			prestmt.setInt(4, myEdge.getSrc());
+			prestmt.setInt(5, myEdge.getTgt());
+			prestmt.addBatch();
+		}
+		prestmt.executeBatch();
+		
+		double endTime = System.currentTimeMillis();
+		System.out.println("插入边消耗时间 ： " + (endTime -startTime) + " 毫秒 ");
+	}
 	
 	// 测试double
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
