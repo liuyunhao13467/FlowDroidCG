@@ -28,20 +28,19 @@ public class CallGraphTools {
 		return false;
 	}
 
-	public static StringBuilder addIfCondition(StringBuilder preConditions, Stmt conditionStmt, Stmt currentStmt) {
-		StringBuilder tmpSb = new StringBuilder(preConditions.toString());
+	public static StringBuilder addIfCondition(Stmt conditionStmt, Stmt currentStmt) {
+		StringBuilder tmpSb = new StringBuilder();
 
-		if (tmpSb.length() > 0) {
-			tmpSb.append(" && ");
-		}
-
-		if (((IfStmt) conditionStmt).getTarget().equals(currentStmt)) {// right?
-			// if条件成立时进入此语句。
-			tmpSb.append(((IfStmt) conditionStmt).getCondition());
+		if (((IfStmt) conditionStmt).getTarget().equals(currentStmt)) {
+			
+			tmpSb.append(((IfStmt) conditionStmt).getCondition());// if条件成立时进入此语句。
+			
 		} else {
-			// 加入非.
-			tmpSb.append("!").append("(").append(((IfStmt) conditionStmt).getCondition()).append(")");
+			
+			tmpSb.append("!").append("(").append(((IfStmt) conditionStmt).getCondition()).append(")");//if条件在不成立时， 加入非.
+			
 		}
+		
 		return tmpSb;
 	}
 
@@ -82,15 +81,19 @@ public class CallGraphTools {
 				indexNeeded = String.valueOf((i - lowIndex));
 			}
 		}
+		
 		if (currentStmt.equals(jTable.getTarget(highIndex - lowIndex))) {
 			indexNeeded = String.valueOf((highIndex - lowIndex));
 		}
+		
 		if (currentStmt.equals(jTable.getDefaultTarget())) {
 			indexNeeded = Jimple.DEFAULT;
 		}
 
 		if (indexNeeded != null && indexNeeded != "") {
+			
 			tmpSb.append("switch == ").append(indexNeeded);
+			
 		} else {
 			throw new Exception("there is no conditions in switch : " + preConditionStmt);
 		}
@@ -119,6 +122,7 @@ public class CallGraphTools {
 		return tmpSb;
 	}
 
+	
 	/**
 	 * 是否需要移动到其他地方 ？？？ 为call graph分配id,包括为方法分配id,为边分配id.
 	 * @param cg
@@ -157,4 +161,5 @@ public class CallGraphTools {
 
 		}
 	}
+
 }

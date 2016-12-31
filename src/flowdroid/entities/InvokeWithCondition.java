@@ -96,7 +96,7 @@ public class InvokeWithCondition {
 		System.out.println("recordConditionStr end ~~");
 	}
 	
-	//TODO  test
+	//TODO  test，也许应该移动到数据库操作那里。
 	public void insertEdges(Map<SootMethod, Integer> method2Id,ProcessManifest manifest,MySQLCor mySql) throws SQLException{
 		String insertEdgesSql = "insert ignore into invoke2 (apk_name,apk_version,caller_id,callee_id,conditions) "
 				+ "values(?,?,?,?,?);";
@@ -117,6 +117,8 @@ public class InvokeWithCondition {
 					prestmt.setString(2, apkVersion);
 					prestmt.setInt(3, callerId);
 					prestmt.setInt(4, calleeId);
+					
+					//TODO 需要区分if，还是switch.
 					if(condition.getConditions() != null){
 						prestmt.setString(5, condition.getConditions().toString());
 					}else{
@@ -124,10 +126,8 @@ public class InvokeWithCondition {
 					}
 					prestmt.addBatch();
 				}
-				
 			}
 		}
-		
 		prestmt.executeBatch();
 	}
 	
