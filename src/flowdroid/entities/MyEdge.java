@@ -1,5 +1,8 @@
 package flowdroid.entities;
 
+/*
+ * 可以是针对<code>UnitGraph</code>,也可以针对是<code>CallGraph</code>.
+ */
 public class MyEdge {
 
 	protected Integer ip;

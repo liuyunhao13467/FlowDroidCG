@@ -16,7 +16,7 @@ import java.util.Queue;
 import flowdroid.utils.CallGraphTools;
 import flowdroid.utils.FileUtils;
 import flowdroid.utils.graphUtils.dotUtils.Block2Graph;
-import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.InvokeStmt;
@@ -116,7 +116,7 @@ public class SquenceCallGraphInOneMethod {
 	//»­Í¼
 	public void drawGraph(){
 		Block2Graph.dotify(bg, invokeBlocks, sbBlockDot);
-		Method2Graph.createDotGraph(sbBlockDot.toString(), "BlockTest_C");
+		UnitGraph2Dot.createDotGraph(sbBlockDot.toString(), "BlockTest_C");
 	}
 
 	public SootMethod getMethod(){

@@ -12,7 +12,7 @@ import java.util.Queue;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.graph.MyBriefUnitGraph;
 import flowdroid.entities.graph.UnitGraphForTopology;
-import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.Stmt;
@@ -52,11 +52,11 @@ public class InvokeWithCondition {
 
 		// debug -- 查看是否去除了异常等信息。
 		if (canShowGraph) {
-			Method2Graph.drawMethodUnitGraph(ug, "dropHead");
+			UnitGraph2Dot.drawMethodUnitGraph(ug, "dropHead");
 		}
 		// debug -- 查看是否移除了环。
 		if (canShowGraph) {
-			Method2Graph.drawMethodUnitGraph(ug, "removeCycle");
+			UnitGraph2Dot.drawMethodUnitGraph(ug, "removeCycle");
 		}
 
 		// 拓扑排序 TODO 错误??

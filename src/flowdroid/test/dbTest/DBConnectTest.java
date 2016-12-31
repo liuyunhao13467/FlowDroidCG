@@ -10,17 +10,14 @@ import java.util.Map;
 import java.util.Set;
 
 import flowdroid.db.MySQLCor;
-import flowdroid.entities.Apk;
-import flowdroid.entities.Method;
+import flowdroid.entities.ApkFromSql;
+import flowdroid.entities.MethodFromSql;
 import flowdroid.entities.MethodID;
 import flowdroid.entities.MyEdge;
 
 public class DBConnectTest {
-	public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/test_graph";
-	public  static final String USER_NAME = "root";
-	public static final String USER_PWD = "123456";
 	public static void main(String[] args) throws SQLException {
-		MySQLCor mysql = new MySQLCor(DB_URL_LOCAL, USER_NAME,USER_PWD);
+		MySQLCor mysql = new MySQLCor(MySQLCor.DB_URL_LOCAL, MySQLCor.USER_NAME,MySQLCor.USER_PWD);
 		data2ApkEntity(mysql);
 	}
 	
@@ -35,7 +32,8 @@ public class DBConnectTest {
 		}
 	}
 	
-	public static Apk data2ApkEntity(MySQLCor mysql) throws SQLException{
+	//test.
+	public static ApkFromSql data2ApkEntity(MySQLCor mysql) throws SQLException{
 		String apkName = "\"com.apps1pro1.word\"";
 		String apkVersion ="\"2\"";
 		String sql_method = "SELECT mid,package_name,class_name,method_name,parameter,return_type "
@@ -46,19 +44,19 @@ public class DBConnectTest {
 		ResultSet rsMethod = mysql.select(sql_method);
 		ResultSet rsCall = mysql.select(sql_call);
 		//　将数据填充进数据结构中。
-		Apk tmpApk = fillApk(apkName, apkVersion, rsMethod, rsCall);
+		ApkFromSql tmpApk = fillApk(apkName, apkVersion, rsMethod, rsCall);
 		//TODO　　test results.
 //		seeAllMethods(tmpApk);
 		
 		return tmpApk;
 	}
-	public static Apk fillApk(String apkName,String apkVersion,ResultSet rsMethod,ResultSet rsCall) throws SQLException{
-		Apk apk = new Apk();
+	public static ApkFromSql fillApk(String apkName,String apkVersion,ResultSet rsMethod,ResultSet rsCall) throws SQLException{
+		ApkFromSql apk = new ApkFromSql();
 		apk.setApkName(apkName);
 		apk.setApkVersion(apkVersion);
 		
 		//fill the method.
-		Set<Method> methods = apk.getMethods();
+		Set<MethodFromSql> methods = apk.getMethods();
 		if (rsMethod.first()) {
 			fillOneMethod(rsMethod, methods);
 			while(rsMethod.next()){
@@ -77,10 +75,10 @@ public class DBConnectTest {
 		return apk;
 	}
 	
-	public static void fillOneMethod(ResultSet rsMethod,Set<Method> methods) throws SQLException{
-		Method tmpMethod = null;
+	public static void fillOneMethod(ResultSet rsMethod,Set<MethodFromSql> methods) throws SQLException{
+		MethodFromSql tmpMethod = null;
 		MethodID id = null;
-		tmpMethod = new Method();
+		tmpMethod = new MethodFromSql();
 		tmpMethod.setPackageName(rsMethod.getString("package_name"));
 		tmpMethod.setClassName(rsMethod.getString("class_name"));
 		id = new MethodID();
@@ -103,7 +101,7 @@ public class DBConnectTest {
 		edges.add(tmpEdge);
 	}
 
-	public static Map<Integer, List<Integer>>  getOutEdges(Apk apk){
+	public static Map<Integer, List<Integer>>  getOutEdges(ApkFromSql apk){
 		Map<Integer, List<Integer>> outEdges = new HashMap<Integer,List<Integer>>();
 		Iterator<MyEdge> edgeIt = apk.getEdges().iterator();
 		MyEdge tmpEdge = null;
@@ -123,13 +121,13 @@ public class DBConnectTest {
 	
 	
 	// for checking the results.
-	public static void seeAllMethods(Apk apk){
+	public static void seeAllMethods(ApkFromSql apk){
 		System.out.println("show the result : ");
 		System.out.println(apk.getApkName());
 		System.out.println(apk.getApkVersion());
 		
-		Iterator<Method> methodIt = apk.getMethods().iterator();
-		Method tmpMethod;
+		Iterator<MethodFromSql> methodIt = apk.getMethods().iterator();
+		MethodFromSql tmpMethod;
 		System.out.println("see all the methods inside : "+ apk.getApkName());
 		while(methodIt.hasNext()){
 			tmpMethod = methodIt.next();

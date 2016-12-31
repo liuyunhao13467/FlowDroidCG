@@ -20,7 +20,7 @@ import soot.toolkits.graph.TrapUnitGraph;
 import soot.toolkits.graph.UnitGraph;
 import soot.toolkits.graph.pdg.EnhancedUnitGraph;
 
-public class Method2Graph {
+public class UnitGraph2Dot {
 	private static String outputDir = "D:/";
 
 	public static void createDotGraph(String dotFormat, String fileName) {
@@ -47,8 +47,8 @@ public class Method2Graph {
 	public static void drawMethodUnitGraph(SootMethod method, String phase) {
 		StringBuilder dotSb = new StringBuilder();
 		System.out.println(method.retrieveActiveBody().toString());
-		Method2Graph.dotify(method, dotSb);
-		Method2Graph.createDotGraph(dotSb.toString(),
+		UnitGraph2Dot.dotify(method, dotSb);
+		UnitGraph2Dot.createDotGraph(dotSb.toString(),
 				method.getDeclaringClass() + "_" + method.getName() + "_" + phase);
 	}
 
@@ -59,7 +59,7 @@ public class Method2Graph {
 		StringBuilder dotSb = new StringBuilder();
 		putNodesToDot(ug, dotSb);
 		putEdgesToDot(ug, dotSb);
-		Method2Graph.createDotGraph(dotSb.toString(),
+		UnitGraph2Dot.createDotGraph(dotSb.toString(),
 				ug.getBody().getMethod().getDeclaringClass() + "_" + ug.getBody().getMethod().getName()+"_"+phaseTag);
 	}
 

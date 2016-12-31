@@ -1,7 +1,10 @@
 package flowdroid.entities;
 
+/*
+ * 生成数据库中关于method的ID信息。
+ */
 public class MethodID {
-private Apk apk;
+private ApkFromSql apk;
 private Integer IDInApk;//只是在一个apk内部有效的ID.
 
 public String getUniqueID(){
@@ -9,10 +12,10 @@ public String getUniqueID(){
 	return null;
 }
 
-public Apk getApk() {
+public ApkFromSql getApk() {
 	return apk;
 }
-public void setApk(Apk apk) {
+public void setApk(ApkFromSql apk) {
 	this.apk = apk;
 }
 public Integer getIDInApk() {

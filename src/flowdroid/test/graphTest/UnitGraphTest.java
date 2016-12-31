@@ -13,7 +13,7 @@ import java.util.Set;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.graph.UnitGraphForTopology;
 import flowdroid.utils.CallGraphTools;
-import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
 import soot.Body;
 import soot.PatchingChain;
 import soot.PhaseOptions;
@@ -315,17 +315,17 @@ public class UnitGraphTest {
 
 	private static void testSwitchStmt() {
 		SootClass appclass = Scene.v().loadClassAndSupport("SwitchTest");// 若无法找到，则生成一个。
-		Method2Graph.drawMethodUnitGraph(appclass.getMethodByName("C"));
+		UnitGraph2Dot.drawMethodUnitGraph(appclass.getMethodByName("C"));
 	}
 
 	private static void testIfAndWhileStmt() {
 		SootClass appclass = Scene.v().loadClassAndSupport("TestMain2");
-		Method2Graph.drawMethodUnitGraph(appclass.getMethodByName("C"));
+		UnitGraph2Dot.drawMethodUnitGraph(appclass.getMethodByName("C"));
 	}
 	
 	private static void testException(){
 		SootClass appclass = Scene.v().loadClassAndSupport("ExceptionTest");
-		Method2Graph.drawMethodUnitGraph(appclass.getMethodByName("C"));
+		UnitGraph2Dot.drawMethodUnitGraph(appclass.getMethodByName("C"));
 	}
 	private static void testInvoke(){
 		SootClass appclass = Scene.v().loadClassAndSupport("TestMain2");
