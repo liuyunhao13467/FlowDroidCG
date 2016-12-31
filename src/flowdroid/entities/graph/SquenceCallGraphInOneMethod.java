@@ -15,8 +15,8 @@ import java.util.Queue;
 
 import flowdroid.utils.CallGraphTools;
 import flowdroid.utils.FileUtils;
-import flowdroid.utils.graphUtils.Block2Graph;
-import flowdroid.utils.graphUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Block2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.InvokeStmt;

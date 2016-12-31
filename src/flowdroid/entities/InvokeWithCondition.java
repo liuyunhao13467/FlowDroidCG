@@ -12,7 +12,7 @@ import java.util.Queue;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.graph.MyBriefUnitGraph;
 import flowdroid.entities.graph.UnitGraphForTopology;
-import flowdroid.utils.graphUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.Stmt;

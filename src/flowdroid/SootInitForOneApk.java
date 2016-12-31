@@ -30,8 +30,21 @@ import soot.util.Chain;
 public class SootInitForOneApk {
 	public final static String ANDROID_JAR_PATH = "lib/android.jar";// 设置android的jar包目录
 	
-	public static void initSootForJava(){
-		//TODO 为java文件的soot使用提供配置。
+	/*
+	 * 为java文件的soot使用提供配置。
+	 */
+	public static void initSootForJava(String javaDir){
+		soot.G.reset();
+		Options.v().set_allow_phantom_refs(true);
+		Options.v().set_validate(true);
+		Options.v().set_output_format(Options.output_format_none);
+		Options.v().set_src_prec(Options.src_prec_java);
+		Options.v().set_process_dir(Collections.singletonList(javaDir));
+		Options.v().set_whole_program(true);
+		enableSpark();
+		Options.v().setPhaseOption("cg.spark verbose:true", "on");
+		Scene.v().loadNecessaryClasses();
+	
 	}
 
 	public static void initSootForApk(String jarPath, String apk) throws IOException, XmlPullParserException {

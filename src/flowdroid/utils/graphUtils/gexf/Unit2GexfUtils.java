@@ -15,6 +15,7 @@ import soot.Unit;
 import soot.toolkits.graph.UnitGraph;
 
 /*
+ * 从androguard那里参考而来，格式比较好，但是考虑问题较少。
  * 用来将一个UnitGraph生成相应的gexf文件。
  */
 public class Unit2GexfUtils {

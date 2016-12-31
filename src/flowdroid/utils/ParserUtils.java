@@ -5,8 +5,6 @@ import soot.SootMethod;
 
 public class ParserUtils {
 	
-	
-	
 	public static boolean isArrayLetter(String letter) {
 		if ("[".equals(letter))
 			return true;

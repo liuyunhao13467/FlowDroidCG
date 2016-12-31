@@ -13,7 +13,7 @@ import java.util.Set;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.graph.UnitGraphForTopology;
 import flowdroid.utils.CallGraphTools;
-import flowdroid.utils.graphUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
 import soot.Body;
 import soot.PatchingChain;
 import soot.PhaseOptions;

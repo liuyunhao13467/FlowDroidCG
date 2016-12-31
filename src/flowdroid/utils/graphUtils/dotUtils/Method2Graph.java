@@ -1,4 +1,4 @@
-package flowdroid.utils.graphUtils;
+package flowdroid.utils.graphUtils.dotUtils;
 
 import java.io.File;
 import java.util.Iterator;
@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Set;
 
 import flowdroid.entities.graph.MyBriefUnitGraph;
-import flowdroid.utils.graphUtils.dotUtils.GraphViz;
 import soot.PatchingChain;
 import soot.SootMethod;
 import soot.Unit;

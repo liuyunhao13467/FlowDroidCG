@@ -1,10 +1,9 @@
-package flowdroid.utils.graphUtils;
+package flowdroid.utils.graphUtils.dotUtils;
 
 import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-import flowdroid.utils.graphUtils.dotUtils.GraphViz;
 import soot.PatchingChain;
 import soot.SootMethod;
 import soot.Unit;

@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Set;
 
 import flowdroid.entities.MyEdge;
-import flowdroid.utils.UnitGraphExporter;
+import flowdroid.utils.graphUtils.gexf.UnitGraph2GexfExporter;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
@@ -273,7 +273,7 @@ public class MySQLCor {
 		//设置ip
 		Map<Unit, Integer> unit2Id = new HashMap<>();
 		List<MyEdge> myEdges = new ArrayList<>();
-		UnitGraphExporter.setIdForUG(ug,unit2Id,myEdges);
+		UnitGraph2GexfExporter.setIdForUG(ug,unit2Id,myEdges);
 		
 		System.out.println("正在准备插入 其语句的方法为: " + ug.getBody().getMethod());
 		double startTime = System.currentTimeMillis();

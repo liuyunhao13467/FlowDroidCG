@@ -11,6 +11,10 @@ import soot.SootMethod;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.jimple.toolkits.callgraph.CallGraph;
 
+
+/*
+ * 输出一些信息。
+ */
 public class OutPutUtils {
 
 	public static void printToFile(String outputPath){

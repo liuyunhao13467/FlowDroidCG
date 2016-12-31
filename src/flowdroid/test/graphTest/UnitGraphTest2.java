@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import flowdroid.entities.InvokeWithCondition;
 import flowdroid.entities.graph.MyBriefUnitGraph;
-import flowdroid.utils.graphUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
 import flowdroid.utils.graphUtils.gexf.Unit2GexfUtils;
 import soot.Scene;
 import soot.SootClass;

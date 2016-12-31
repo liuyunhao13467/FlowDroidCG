@@ -2,8 +2,8 @@ package flowdroid.test.graphTest;
 
 import flowdroid.entities.graph.MyBriefBlockGraph;
 import flowdroid.entities.graph.SquenceCallGraphInOneMethod;
-import flowdroid.utils.graphUtils.Block2Graph;
-import flowdroid.utils.graphUtils.Method2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Block2Graph;
+import flowdroid.utils.graphUtils.dotUtils.Method2Graph;
 import soot.Scene;
 import soot.SootClass;
 import soot.toolkits.graph.BlockGraph;
