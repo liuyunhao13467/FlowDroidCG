@@ -15,7 +15,7 @@ import flowdroid.entities.Method;
 import flowdroid.entities.MethodID;
 import flowdroid.entities.MyEdge;
 
-public class TestDBConnect {
+public class DBConnectTest {
 	public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/test_graph";
 	public  static final String USER_NAME = "root";
 	public static final String USER_PWD = "123456";

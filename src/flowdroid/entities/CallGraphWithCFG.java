@@ -42,7 +42,7 @@ public class CallGraphWithCFG {
 			// if(ParserUtils.isOwnMethod(tmpMethod,
 			// processMan.getPackageName())){//TODO 将android方法也排除掉。
 			System.out.println(
-					tmpMethod.getDeclaringClass().getName() + " ---> " + tmpMethod.getName() + "--- started !!");
+			tmpMethod.getDeclaringClass().getName() + " ---> " + tmpMethod.getName() + "--- started !!");
 			methodsWithConditions.add(new MethodCallWithCondition(tmpMethod));
 			System.out.println("method --- " + tmpMethod.getName() + " --- done !!");
 			// }

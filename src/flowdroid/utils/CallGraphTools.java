@@ -123,7 +123,7 @@ public class CallGraphTools {
 	 * 是否需要移动到其他地方 ？？？ 为call graph分配id,包括为方法分配id,为边分配id.
 	 * @param cg
 	 */
-	public void setIdForCG(Map<SootMethod, Integer> method2Id, List<MyEdge> myEdges, CallGraph cg) {
+	public static void setIdForCG(Map<SootMethod, Integer> method2Id, List<MyEdge> myEdges, CallGraph cg) {
 		int nodeId = 0;// 用来表示结点的id.
 		int edgeId = 0;// 用来表示边的id.
 

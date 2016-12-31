@@ -154,7 +154,7 @@ public class MySQLCor {
 		SootClass sootClass;
 		SootMethod method;
 		Integer mId;
-		System.out.println("正在准备插入apk : " + apkName + "_" + apkVersion);
+		System.out.println("正在准备插入apk中的方法 : " + apkName + "_" + apkVersion);
 		while(methodIt.hasNext()){
 			method = methodIt.next();
 			sootClass = method.getDeclaringClass();
@@ -179,14 +179,15 @@ public class MySQLCor {
 		double startTime = System.currentTimeMillis();
 		prestmt.executeBatch();
 		double endTime = System.currentTimeMillis();
-		System.out.println("插入apk结束 : " + apkName + "_" + apkVersion);
+		System.out.println("插入apk中的方法结束 : " + apkName + "_" + apkVersion);
 		System.out.println("插入结点消耗时间 ： " + (endTime -startTime) + " 毫秒");
 	}
 	
 	
 	public void insertMethodEdges(List<MyEdge> myEdges,ProcessManifest manifest) throws SQLException{
-		String insertEdgesSql = "insert into invoke (apk_name,apk_version,edge_id,caller_id,callee_id,condition) "
-				+ "values(?,?,?,?,?,?)";//未考虑condition字段
+		String insertEdgesSql = "insert ignore into invoke (apk_name,apk_version,edge_id,caller_id,callee_id,conditions) "
+				+ "values(?,?,?,?,?,?);";//未考虑condition字段
+		
 		PreparedStatement prestmt = con.prepareStatement(insertEdgesSql);
 		String apkName = manifest.getPackageName();
 		String apkVersion = manifest.getVersionName();
@@ -198,13 +199,14 @@ public class MySQLCor {
 			prestmt.setInt(3, myEdge.getIp());
 			prestmt.setInt(4, myEdge.getSrc());
 			prestmt.setInt(5, myEdge.getTgt());
-			prestmt.setString(6, myEdge.getConditions().toString());
+//			prestmt.setString(6, myEdge.getConditions().toString());
+			prestmt.setString(6, "todo");
 			prestmt.addBatch();
 		}
 		
 		prestmt.executeBatch();
 		double endTime = System.currentTimeMillis();
-		System.out.println("正在准备插入apk边 : " + apkName + "_" + apkVersion);
+		System.out.println("插入apk边结束 : " + apkName + "_" + apkVersion);
 		System.out.println("插入边消耗时间 ： " + (endTime -startTime) + " 毫秒 ");
 
 	}
@@ -229,6 +231,7 @@ public class MySQLCor {
 	public void insertOneClassJimple(File oneClass,ProcessManifest manifest) throws SQLException, FileNotFoundException{
 		String sql_jimple = "insert into apk_jimple(apk_name,apk_version,package_name,class_name,jimple) "
 				+ "values(?,?,?,?,?)";
+		
 		PreparedStatement prestmt = con.prepareStatement(sql_jimple);
 		String apkName = manifest.getPackageName();
 		String apkVersion = manifest.getVersionName();
@@ -255,10 +258,10 @@ public class MySQLCor {
 	 * 将UnitGraph插入到数据库中。
 	 */
 	public void insertOneUnitGraph(UnitGraph ug,Map<SootMethod,Integer> method2Ip,ProcessManifest manifest) throws SQLException{
-		String insert_units = "insert into apk_method_unit (apk_name,apk_version,mid,unit_id,unit_content,unit_type) "
+		String insert_units = "insert ignore into apk_method_unit (apk_name,apk_version,mid,unit_id,unit_content,unit_type) "
 				+ "values(?,?,?,?,?,?)";
 		
-		String insert_units_relation = "insert into unit_edge (apk_name,apk_version,mid,pre_unit_id,succ_unit_id) "
+		String insert_units_relation = "insert ignore into unit_edge (apk_name,apk_version,mid,pre_unit_id,succ_unit_id) "
 				+ "values(?,?,?,?,?)";
 		
 		String apkName = manifest.getPackageName();
@@ -286,7 +289,7 @@ public class MySQLCor {
 		prestmt.executeBatch();
 		
 		//插入边的信息
-		prestmt = con.prepareStatement(insert_units);
+		prestmt = con.prepareStatement(insert_units_relation);
 		for(MyEdge myEdge : myEdges){
 			prestmt.setString(1, apkName);
 			prestmt.setString(2, apkVersion);

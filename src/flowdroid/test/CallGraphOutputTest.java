@@ -64,7 +64,6 @@ public class CallGraphOutputTest {
         CallGraphWithCFG callCFG = new CallGraphWithCFG(cg,processMan);
         Map<SootMethod, Integer> method2Id = new HashMap<>();
 		List<MyEdge> myEdges = new ArrayList<MyEdge>();
-		callCFG.setIdForCG(method2Id, myEdges);
 //        mysql.insertMethodNodes(cge.getMethod2Id(), manifest);
 //		mysql.insertMethodEdges(cge.getMyEdges(), manifest);
 		mysql.insertMethodNodes(method2Id, manifest);

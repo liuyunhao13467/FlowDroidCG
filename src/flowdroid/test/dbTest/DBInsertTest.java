@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import flowdroid.db.MySQLCor;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
 
-public class TestDBInsert {
+public class DBInsertTest {
 	public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/graph_cfg";
 	public  static final String USER_NAME = "root";
 	public static final String USER_PWD = "123456";
