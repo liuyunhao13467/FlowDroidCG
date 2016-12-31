@@ -3,7 +3,7 @@ package flowdroid.test.IRRepresentationTest;
 import java.util.Map;
 import java.util.Set;
 
-import flowdroid.parser.MethodCallWithCondition;
+import flowdroid.entities.InvokeWithCondition;
 import flowdroid.test.graphTest.UnitGraphTest;
 import soot.Scene;
 import soot.SootClass;
@@ -18,7 +18,7 @@ public class JSwitchTest {
 
 	private static void testSwitchStmt() {
 		SootClass appclass = Scene.v().loadClassAndSupport("SwitchTest");// 若无法找到，则生成一个。
-		MethodCallWithCondition methodWithCondition = new MethodCallWithCondition(appclass.getMethodByName("C"));
+		InvokeWithCondition methodWithCondition = new InvokeWithCondition(appclass.getMethodByName("C"));
 		Map<SootMethod,StringBuilder> calleeInfo = methodWithCondition.getConditions();
 		Set<SootMethod> callees = calleeInfo.keySet();
 		for(SootMethod callee :callees){

@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import flowdroid.entities.InvokeWithCondition;
 import flowdroid.entities.MyEdge;
-import flowdroid.parser.MethodCallWithCondition;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.IfStmt;

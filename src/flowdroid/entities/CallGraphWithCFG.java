@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import flowdroid.parser.MethodCallWithCondition;
 import flowdroid.utils.ParserUtils;
 import soot.MethodOrMethodContext;
 import soot.SootMethod;
@@ -25,7 +24,7 @@ public class CallGraphWithCFG {
 
 	protected CallGraph callGraph;
 	protected ProcessManifest processMan;
-	protected Set<MethodCallWithCondition> methodsWithConditions = new HashSet<MethodCallWithCondition>();
+	protected Set<InvokeWithCondition> methodsWithConditions = new HashSet<InvokeWithCondition>();
 
 	public CallGraphWithCFG(CallGraph cg, ProcessManifest processMan) {
 		this.callGraph = cg;
@@ -43,7 +42,7 @@ public class CallGraphWithCFG {
 			// processMan.getPackageName())){//TODO 将android方法也排除掉。
 			System.out.println(
 			tmpMethod.getDeclaringClass().getName() + " ---> " + tmpMethod.getName() + "--- started !!");
-			methodsWithConditions.add(new MethodCallWithCondition(tmpMethod));
+			methodsWithConditions.add(new InvokeWithCondition(tmpMethod));
 			System.out.println("method --- " + tmpMethod.getName() + " --- done !!");
 			// }
 		}

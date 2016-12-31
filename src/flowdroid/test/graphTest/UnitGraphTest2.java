@@ -3,8 +3,8 @@ package flowdroid.test.graphTest;
 import java.util.Collections;
 import java.util.HashMap;
 
+import flowdroid.entities.InvokeWithCondition;
 import flowdroid.entities.graph.MyBriefUnitGraph;
-import flowdroid.parser.MethodCallWithCondition;
 import flowdroid.utils.Unit2GexfUtils;
 import flowdroid.utils.graphUtils.Method2Graph;
 import soot.Scene;
