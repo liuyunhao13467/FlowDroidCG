@@ -25,11 +25,10 @@ import soot.util.Chain;
 
 /**
  * 该段测试代码的主要目的： 完成对于soot的基本信息的一些配置，供其他模块使用。
- * 
  * @author wang
- *
  */
 public class SootInitForOneApk {
+	public final static String ANDROID_JAR_PATH = "lib/android.jar";// 设置android的jar包目录
 	
 	public static void initSootForJava(){
 		//TODO 为java文件的soot使用提供配置。
@@ -91,11 +90,10 @@ public class SootInitForOneApk {
 	 * test
 	 *******
 	 */
-	public final static String jarPath = "lib/android.jar";// 设置android的jar包目录
 	public final static String apk = "test/test_apk/aa.ex.B_K_K_AD-67.apk";	// 设置要分析的APK文件
 	public static void main(String[] args) throws IOException, XmlPullParserException {
 
-		initSootForApk(jarPath, apk);
+		initSootForApk(ANDROID_JAR_PATH, apk);
 		CallGraph cg = Scene.v().getCallGraph();
 		Chain<SootClass> classes = Scene.v().getClasses();
 		Chain<SootClass> phtomClasses = Scene.v().getPhantomClasses();

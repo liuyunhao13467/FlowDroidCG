@@ -2,8 +2,8 @@ package flowdroid.test.ioTest;
 
 import flowdroid.test.graphTest.UnitGraphTest;
 import flowdroid.utils.FileUtils;
-import flowdroid.utils.Unit2GexfUtils;
 import flowdroid.utils.UnitGraphExporter;
+import flowdroid.utils.graphUtils.gexf.Unit2GexfUtils;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;

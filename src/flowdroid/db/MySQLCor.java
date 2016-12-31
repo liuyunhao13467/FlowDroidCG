@@ -32,6 +32,7 @@ import soot.toolkits.graph.UnitGraph;
 public class MySQLCor {
 	public  static final String USER_NAME = "root";
 	public static final String USER_PWD = "123456";
+	public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/graph_cfg";
 	
 	private String dbUrl = "";
 

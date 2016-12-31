@@ -22,30 +22,27 @@ import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.toolkits.graph.BriefUnitGraph;
 
+/*
+ * 尝试将带条件的语句插入到 数据库 中。
+ */
 public class InsertCGTest {
-	public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/graph_cfg";
-	public  static final String USER_NAME = "root";
-	public static final String USER_PWD = "123456";
-	//设置android的jar包目录
-    public final static String jarPath = "lib/android.jar";
-    //设置要分析的APK文件
-    public final static String apk = "test/test_apk/aa.ex.B_K_K_AD-67.apk";
+    public final static String myApk = "test/test_apk/aa.ex.B_K_K_AD-67.apk";
+    
 	public static void main(String[] args) throws SQLException, IOException, XmlPullParserException {
-			MySQLCor mysql = new MySQLCor(DB_URL_LOCAL, USER_NAME,USER_PWD);
-			SootInitForOneApk.initSootForApk(jarPath,apk);
-			ProcessManifest manifest = new ProcessManifest(apk);
+		
+			MySQLCor mysql = new MySQLCor(MySQLCor.DB_URL_LOCAL, MySQLCor.USER_NAME,MySQLCor.USER_PWD);
+			SootInitForOneApk.initSootForApk(SootInitForOneApk.ANDROID_JAR_PATH,myApk);
+			
+			ProcessManifest manifest = new ProcessManifest(myApk);
 			CallGraph cg = Scene.v().getCallGraph();
 			Map<SootMethod,Integer> method2Id = new HashMap<>();
 			List<MyEdge> myEdges = new ArrayList<>();
 			CallGraphTools.setIdForCG(method2Id, myEdges, cg);
-			
 //			mysql.insertMethodNodes(method2Id, manifest);
 //			mysql.insertMethodEdges(myEdges, manifest);
-			
 			for(Iterator<MethodOrMethodContext> methods =cg.sourceMethods();methods.hasNext();){
 				SootMethod current = methods.next().method();
 				mysql.insertOneUnitGraph(new BriefUnitGraph(current.retrieveActiveBody()), method2Id, manifest);
 			}
-			
 	}
 }

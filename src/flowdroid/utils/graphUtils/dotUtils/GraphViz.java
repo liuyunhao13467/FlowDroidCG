@@ -1,4 +1,4 @@
-package flowdroid.utils.graphUtils;
+package flowdroid.utils.graphUtils.dotUtils;
 
 //GraphViz.java - a simple API to call dot from Java programs
 

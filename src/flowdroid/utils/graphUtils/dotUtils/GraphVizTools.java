@@ -1,4 +1,4 @@
-package flowdroid.utils.graphUtils;
+package flowdroid.utils.graphUtils.dotUtils;
 
 import java.io.File;
 
