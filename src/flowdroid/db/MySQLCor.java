@@ -30,7 +30,9 @@ import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.toolkits.graph.UnitGraph;
 
 public class MySQLCor {
-
+	public  static final String USER_NAME = "root";
+	public static final String USER_PWD = "123456";
+	
 	private String dbUrl = "";
 
 	private Connection con = null;

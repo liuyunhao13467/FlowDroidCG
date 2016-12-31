@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParserException;
 
+import flowdroid.SootInitForOneApk;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.MyEdge;
 import flowdroid.parser.CallGraphWithCFG;
@@ -36,22 +37,19 @@ import soot.options.Options;
  *
  */
 public class CallGraphOutputTest {
-
-	//设置android的jar包目录
-    public final static String jarPath = "lib/android.jar";
-    //设置要分析的APK文件
-    public final static String apk = "test/test_apk/aa.ex.B_K_K_AD-67.apk";
+	
+    public final static String jarPath = "lib/android.jar";//设置android的jar包目录
+    public final static String apk = "test/test_apk/aa.ex.B_K_K_AD-67.apk";//设置要分析的APK文件
     public final static String outputPath = "test/gexf";
+    public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/graph_cfg"; //数据库相关
+    
     private static Map<String,Boolean> visited = new HashMap<String,Boolean>();
     private static CGExporter cge = new CGExporter();
-    //数据库相关
-    public static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/graph_cfg";
-	public  static final String USER_NAME = "root";
-	public static final String USER_PWD = "123456";
     
 	public static void main(String[] args) throws IOException, XmlPullParserException, SQLException {
 		
-		SootMethod entryPoint = init();
+		SootInitForOneApk.initSootForApk(jarPath, apk);
+		
         CallGraph cg = Scene.v().getCallGraph();
 //        cge.createGraph(cg);
 //        cge.exportMIG("flowdroidCFG2", outputPath);
@@ -59,7 +57,7 @@ public class CallGraphOutputTest {
         //输出到数据库
         cge.setIdForCG(cg);
         ProcessManifest manifest = new ProcessManifest(apk);
-		MySQLCor mysql = new MySQLCor(DB_URL_LOCAL, USER_NAME,USER_PWD);
+		MySQLCor mysql = new MySQLCor(DB_URL_LOCAL, MySQLCor.USER_NAME,MySQLCor.USER_PWD);
 		ProcessManifest processMan = new ProcessManifest(apk);
         CallGraphWithCFG callCFG = new CallGraphWithCFG(cg,processMan);
         Map<SootMethod, Integer> method2Id = new HashMap<>();
@@ -69,44 +67,16 @@ public class CallGraphOutputTest {
 		mysql.insertMethodNodes(method2Id, manifest);
 		mysql.insertMethodEdges(myEdges, manifest);
 		
-        System.out.println("the size is : " + cg.size());
-        System.out.println("ended !!! ");
+        System.out.println("the size is : " + cg.size() + "   end !!!");
 	}
 	
-	public static SootMethod init() throws IOException, XmlPullParserException{
-		SetupApplication app = new SetupApplication(jarPath, apk);
-		app.setCallbackFile("AndroidCallbacks.txt");
-        try{
-            app.calculateSourcesSinksEntrypoints("test/sourcesAndSinks.txt");//DONE 
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        
-		soot.G.reset();
-        Options.v().set_src_prec(Options.src_prec_apk);
-        Options.v().set_process_dir(Collections.singletonList(apk));
-        Options.v().set_force_android_jar(jarPath);
-        Options.v().set_whole_program(true);
-        Options.v().set_allow_phantom_refs(true);
-        Options.v().set_output_format(Options.output_format_none);
-        Options.v().setPhaseOption("cg.spark", "on");
-        Options.v().set_no_bodies_for_excluded(true);
-        Options.v().set_app(true);
-        Scene.v().loadNecessaryClasses();
-        
-        AndroidEntryPointCreator entryCreator = app.getEntryPointCreator();//TODO why null ?
-        SootMethod entryPoint = entryCreator.createDummyMain();
-        Options.v().set_main_class(entryPoint.getSignature());
-        Scene.v().setEntryPoints(Collections.singletonList(entryPoint));
-        PackManager.v().runPacks();
-        return entryPoint;
-	}
 	
+	
+	//TODO 测试如何通过参数配置，改变call graph涉及的规模。
 	public static void initNew() throws IOException, XmlPullParserException{
 		SetupApplication app = new SetupApplication(jarPath, apk);
 		app.setCallbackFile("AndroidCallbacks.txt");
         try{
-            //计算APK的入口点，这一步导入的文件是Flowdroid进行污点分析的时候需要的，这里直接新建一个空文件即可。
             app.calculateSourcesSinksEntrypoints("test/sourcesAndSinks.txt");
         }catch(Exception e){
             e.printStackTrace();
@@ -121,7 +91,7 @@ public class CallGraphOutputTest {
         Options.v().set_output_format(Options.output_format_none);
         Options.v().setPhaseOption("cg.spark", "on");
         new SootConfigForAndroid().setSootOptions(Options.v());
-//        Options.v().set_no_bodies_for_excluded(true);
+//      Options.v().set_no_bodies_for_excluded(true);
         Scene.v().loadNecessaryClasses();
         SootMethod entryPoint = app.getEntryPointCreator().createDummyMain();
         entryPoint.getActiveBody().validate();
