@@ -64,6 +64,7 @@ public class InvokeWithCondition {
 		Queue<Unit> topologyOrder = ugft.getTopologyOrder();
 
 		recordConditionStr(ug, topologyOrder);
+		
 		System.out.println("getConditions end ~~");
 	}
 
@@ -84,7 +85,7 @@ public class InvokeWithCondition {
 					
 				}else if (unit2Conditions.get(pre) != null) {
 					
-					conditions.addAll(unit2Conditions.get(pre));//正常情况下，获得前驱信息。
+					conditions.addAll(unit2Conditions.get(pre));//正常情况下，直接获得前驱信息。
 					
 				}
 			}
@@ -95,7 +96,7 @@ public class InvokeWithCondition {
 		System.out.println("recordConditionStr end ~~");
 	}
 	
-	//TODO 
+	//TODO  test
 	public void insertEdges(Map<SootMethod, Integer> method2Id,ProcessManifest manifest,MySQLCor mySql) throws SQLException{
 		String insertEdgesSql = "insert ignore into invoke2 (apk_name,apk_version,caller_id,callee_id,conditions) "
 				+ "values(?,?,?,?,?);";
@@ -130,38 +131,6 @@ public class InvokeWithCondition {
 		prestmt.executeBatch();
 	}
 	
-
-	private Map<SootMethod, StringBuilder> getMethodCondition(Map<Unit, StringBuilder> unit2Conditions) {
-		System.out.println("getMethodCondition start ~~");
-		// 将method的调用与条件保留下来。
-		Map<SootMethod, StringBuilder> method2Conditions = new HashMap<>();
-		StringBuilder sbCondition;
-		SootMethod tmpMethod;
-		for (Unit unit : unit2Conditions.keySet()) {
-			if (((Stmt) unit).containsInvokeExpr()) {
-				sbCondition = new StringBuilder(unit2Conditions.get(unit));
-				tmpMethod = ((Stmt) unit).getInvokeExpr().getMethod();
-
-				if (method2Conditions.containsKey(tmpMethod) && method2Conditions.get(tmpMethod).length() != 0) {
-					if (sbCondition.toString().equals("")) {
-						method2Conditions.get(tmpMethod).append(" || ").append("ANY");
-					} else {
-						method2Conditions.get(tmpMethod).append(" || ").append(sbCondition);
-					}
-				} else {
-					if (sbCondition.toString().equals("")) {
-						method2Conditions.put(tmpMethod, new StringBuilder("ANY"));
-					} else {
-						method2Conditions.put(tmpMethod, sbCondition);
-					}
-				}
-			}
-		}
-
-		System.out.println("getMethodCondition end ~~");
-		return method2Conditions;
-	}
-
 	public static class PreMethodAndPreCondition {
 		protected Unit invoke;
 		protected Unit Conditions;

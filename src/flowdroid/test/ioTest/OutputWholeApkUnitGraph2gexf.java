@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import flowdroid.test.GetOneApkCGTest;
+import flowdroid.SootInitForOneApk;
 import flowdroid.utils.FileUtils;
 import flowdroid.utils.UnitGraphExporter;
 import soot.MethodOrMethodContext;
@@ -36,7 +36,7 @@ public class OutputWholeApkUnitGraph2gexf {
     
 	public static void main(String[] args) throws IOException, XmlPullParserException {
 		// TODO Auto-generated method stub
-		GetOneApkCGTest.init(jarPath, apk);
+		SootInitForOneApk.initSootForApk(jarPath, apk);
 		ProcessManifest manifest = new ProcessManifest(apk);
 		CallGraph cg = Scene.v().getCallGraph();
 		Iterator<MethodOrMethodContext> methodIt = cg.sourceMethods();

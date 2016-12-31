@@ -12,8 +12,8 @@ import java.util.Map;
 import org.xmlpull.v1.XmlPullParserException;
 
 import flowdroid.db.MySQLCor;
-import flowdroid.entities.CallGraphWithCFG;
 import flowdroid.entities.MyEdge;
+import flowdroid.parser.CallGraphWithCFG;
 import flowdroid.utils.CGExporter;
 import soot.MethodOrMethodContext;
 import soot.PackManager;
@@ -64,7 +64,7 @@ public class CallGraphOutputTest {
         CallGraphWithCFG callCFG = new CallGraphWithCFG(cg,processMan);
         Map<SootMethod, Integer> method2Id = new HashMap<>();
 		List<MyEdge> myEdges = new ArrayList<MyEdge>();
-//        mysql.insertMethodNodes(cge.getMethod2Id(), manifest);
+//      mysql.insertMethodNodes(cge.getMethod2Id(), manifest);
 //		mysql.insertMethodEdges(cge.getMyEdges(), manifest);
 		mysql.insertMethodNodes(method2Id, manifest);
 		mysql.insertMethodEdges(myEdges, manifest);

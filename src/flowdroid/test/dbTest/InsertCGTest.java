@@ -10,10 +10,10 @@ import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParserException;
 
+import flowdroid.SootInitForOneApk;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.MyEdge;
 import flowdroid.parser.callgraph.CallGraphParser;
-import flowdroid.test.GetOneApkCGTest;
 import flowdroid.utils.CallGraphTools;
 import soot.MethodOrMethodContext;
 import soot.Scene;
@@ -32,7 +32,7 @@ public class InsertCGTest {
     public final static String apk = "test/test_apk/aa.ex.B_K_K_AD-67.apk";
 	public static void main(String[] args) throws SQLException, IOException, XmlPullParserException {
 			MySQLCor mysql = new MySQLCor(DB_URL_LOCAL, USER_NAME,USER_PWD);
-			GetOneApkCGTest.init(jarPath,apk);
+			SootInitForOneApk.initSootForApk(jarPath,apk);
 			ProcessManifest manifest = new ProcessManifest(apk);
 			CallGraph cg = Scene.v().getCallGraph();
 			Map<SootMethod,Integer> method2Id = new HashMap<>();
