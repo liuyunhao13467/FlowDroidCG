@@ -1,9 +1,6 @@
 package flowdroid.test.graphTest.algorithm;
 
-import java.awt.print.Printable;
-
-import flowdroid.parser.BlockGraphWithCondition;
-import flowdroid.test.graphTest.UnitGraphTest;
+import flowdroid.SootInit;
 import soot.Scene;
 import soot.SootClass;
 import soot.toolkits.graph.Block;
@@ -14,8 +11,7 @@ public class LCAOfBlockGraph {
 
 	public static final String path = "test/javaTest";
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		UnitGraphTest.initialSoot(path);
+		SootInit.initSootForJava(path);
 		SootClass appclass = Scene.v().loadClassAndSupport("TestMain2");// 若无法找到，则生成一个。
 		BlockGraph bg = new BriefBlockGraph(appclass.getMethodByName("C").retrieveActiveBody());
 		Block todo = null ;

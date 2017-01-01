@@ -140,7 +140,6 @@ public class InvokeWithCondition {
 					prestmt.setInt(3, callerId);
 					prestmt.setInt(4, calleeId);
 					
-					//TODO 需要区分if，还是switch.
 					if(condition.getPreConditions() != null){
 						prestmt.setString(5, condition.getPreConditions().toString());
 					}else{

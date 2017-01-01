@@ -2,7 +2,7 @@ package flowdroid.test.graphTest;
 
 import java.util.List;
 
-import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
+import flowdroid.SootInit;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -10,7 +10,6 @@ import soot.Unit;
 import soot.jimple.LookupSwitchStmt;
 import soot.jimple.Stmt;
 import soot.jimple.SwitchStmt;
-import soot.jimple.TableSwitchStmt;
 import soot.jimple.internal.JTableSwitchStmt;
 import soot.toolkits.graph.BriefUnitGraph;
 import soot.toolkits.graph.UnitGraph;
@@ -19,7 +18,7 @@ public class SwitchGraphTest {
 	public static final String path = "test/javaTest";
 	public static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) {
-		UnitGraphTest.initialSoot(path);
+		SootInit.initSootForJava(path);		
 		testSwitchStmt();
 	}
 	

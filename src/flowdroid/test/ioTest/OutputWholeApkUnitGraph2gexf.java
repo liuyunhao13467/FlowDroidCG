@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import flowdroid.SootInitForOneApk;
+import flowdroid.SootInit;
 import flowdroid.utils.FileUtils;
 import flowdroid.utils.graphUtils.gexf.UnitGraph2GexfExporter;
 import soot.MethodOrMethodContext;
@@ -31,7 +31,7 @@ public class OutputWholeApkUnitGraph2gexf {
 	public static Map<String, Integer> fileCount = new HashMap<>();
     
 	public static void main(String[] args) throws IOException, XmlPullParserException {
-		SootInitForOneApk.initSootForApk(SootInitForOneApk.ANDROID_JAR_PATH, apk);
+		SootInit.initSootForApk(SootInit.ANDROID_JAR_PATH, apk);
 		ProcessManifest manifest = new ProcessManifest(apk);
 		
 		CallGraph cg = Scene.v().getCallGraph();

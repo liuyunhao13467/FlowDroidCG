@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import flowdroid.SootInitForOneApk;
+import flowdroid.SootInit;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.InvokeWithCondition;
 import flowdroid.entities.MyEdge;
@@ -31,7 +31,7 @@ public class InsertCGTest {
 	public static void main(String[] args) throws SQLException, IOException, XmlPullParserException {
 		
 			MySQLCor mysql = new MySQLCor(MySQLCor.DB_URL_LOCAL, MySQLCor.USER_NAME,MySQLCor.USER_PWD);
-			SootInitForOneApk.initSootForApk(SootInitForOneApk.ANDROID_JAR_PATH,myApk);
+			SootInit.initSootForApk(SootInit.ANDROID_JAR_PATH,myApk);
 			
 			ProcessManifest manifest = new ProcessManifest(myApk);
 			CallGraph cg = Scene.v().getCallGraph();

@@ -1,20 +1,19 @@
 package flowdroid.test.graphTest;
 
+import flowdroid.SootInit;
 import flowdroid.entities.graph.MyBriefBlockGraph;
 import flowdroid.entities.graph.SquenceCallGraphInOneMethod;
 import flowdroid.utils.graphUtils.dotUtils.Block2Graph;
-import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
 import soot.Scene;
 import soot.SootClass;
 import soot.toolkits.graph.BlockGraph;
-import soot.toolkits.graph.BriefBlockGraph;
 
 public class BlockGraphTest {
 	public static final String path = "test/javaTest";
 	public static StringBuilder sb = new StringBuilder();
 	
 	public static void main(String[] args) {
-		UnitGraphTest.initialSoot(path);
+		SootInit.initSootForJava(path);
 		// TODO test the block Graph.
 		SootClass appclass = Scene.v().loadClassAndSupport("TestMain2");// 若无法找到，则生成一个。
 //	    SquenceCallGraphInOneMethod smIp = new SquenceCallGraphInOneMethod(appclass.getMethodByName("C"));

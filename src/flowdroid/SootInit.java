@@ -27,7 +27,7 @@ import soot.util.Chain;
  * 该段测试代码的主要目的： 完成对于soot的基本信息的一些配置，供其他模块使用。
  * @author wang
  */
-public class SootInitForOneApk {
+public class SootInit {
 	public final static String ANDROID_JAR_PATH = "lib/android.jar";// 设置android的jar包目录
 	
 	/*

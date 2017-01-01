@@ -11,7 +11,7 @@ import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import flowdroid.SootInitForOneApk;
+import flowdroid.SootInit;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.MyEdge;
 import flowdroid.parser.CallGraphWithCFG;
@@ -36,7 +36,7 @@ public class CallGraph2GexfTest {
     
 	public static void main(String[] args) throws IOException, XmlPullParserException, SQLException {
 		
-		SootInitForOneApk.initSootForApk(SootInitForOneApk.ANDROID_JAR_PATH, apk);
+		SootInit.initSootForApk(SootInit.ANDROID_JAR_PATH, apk);
         CallGraph cg = Scene.v().getCallGraph();
         CGExporter cge = new CGExporter();
         cge.createGraph(cg);

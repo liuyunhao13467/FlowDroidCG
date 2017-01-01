@@ -1,6 +1,6 @@
 package flowdroid.test.ioTest;
 
-import flowdroid.SootInitForOneApk;
+import flowdroid.SootInit;
 import flowdroid.test.graphTest.UnitGraphTest;
 import flowdroid.utils.FileUtils;
 import flowdroid.utils.graphUtils.gexf.Unit2GexfUtils;
@@ -16,7 +16,7 @@ public class UnitGraph2GexfTest {
 	public static String outputPath = "test/gexf/";
 
 	public static void main(String[] args) {
-		SootInitForOneApk.initSootForJava(inputPath);
+		SootInit.initSootForJava(inputPath);
 		
 		SootClass appclass = Scene.v().loadClassAndSupport("WhileTest");
 		SootMethod method = appclass.getMethodByName("C");
