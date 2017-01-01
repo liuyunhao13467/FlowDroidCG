@@ -12,8 +12,8 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import flowdroid.SootInitForOneApk;
 import flowdroid.db.MySQLCor;
+import flowdroid.entities.InvokeWithCondition;
 import flowdroid.entities.MyEdge;
-import flowdroid.parser.callgraph.CallGraphParser;
 import flowdroid.utils.CallGraphTools;
 import soot.MethodOrMethodContext;
 import soot.Scene;
@@ -42,7 +42,11 @@ public class InsertCGTest {
 //			mysql.insertMethodEdges(myEdges, manifest);
 			for(Iterator<MethodOrMethodContext> methods =cg.sourceMethods();methods.hasNext();){
 				SootMethod current = methods.next().method();
-				mysql.insertOneUnitGraph(new BriefUnitGraph(current.retrieveActiveBody()), method2Id, manifest);
+//				mysql.insertOneUnitGraph(new BriefUnitGraph(current.retrieveActiveBody()), method2Id, manifest);
+				InvokeWithCondition invoke = new InvokeWithCondition(current);
+				invoke.insertEdges(method2Id, manifest, mysql);
+				System.out.println("end ~~~~");
 			}
+			
 	}
 }

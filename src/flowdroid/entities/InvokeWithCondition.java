@@ -98,6 +98,7 @@ public class InvokeWithCondition {
 	
 	//TODO  test，也许应该移动到数据库操作那里。
 	public void insertEdges(Map<SootMethod, Integer> method2Id,ProcessManifest manifest,MySQLCor mySql) throws SQLException{
+		System.out.println("insert method with conditions : " + caller.getSignature());
 		String insertEdgesSql = "insert ignore into invoke2 (apk_name,apk_version,caller_id,callee_id,conditions) "
 				+ "values(?,?,?,?,?);";
 		int callerId = method2Id.get(caller);
@@ -110,6 +111,9 @@ public class InvokeWithCondition {
 			Stmt current = (Stmt)units.next();
 			if( current.containsInvokeExpr() ){
 				SootMethod callee = current.getInvokeExpr().getMethod();
+				if(!method2Id.containsKey(callee)) {
+					continue;
+					}
 				int calleeId = method2Id.get(callee);
 				
 				for(PreMethodAndPreCondition condition : unit2Conditions.get(current)){
