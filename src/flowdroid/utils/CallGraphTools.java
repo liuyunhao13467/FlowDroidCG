@@ -28,7 +28,7 @@ public class CallGraphTools {
 		return false;
 	}
 
-	public static StringBuilder addIfCondition(Stmt conditionStmt, Stmt currentStmt) {
+	public static StringBuilder getIfCondition(Stmt conditionStmt, Stmt currentStmt) {
 		StringBuilder tmpSb = new StringBuilder();
 
 		if (((IfStmt) conditionStmt).getTarget().equals(currentStmt)) {
@@ -44,7 +44,7 @@ public class CallGraphTools {
 		return tmpSb;
 	}
 
-	public static StringBuilder addSwitchCondition(StringBuilder preConditions, Stmt conditionStmt, Stmt currentStmt)
+	public static StringBuilder getSwitchCondition( Stmt conditionStmt, Stmt currentStmt)
 			throws Exception {
 		StringBuilder switchCondition = null;
 		if (conditionStmt instanceof JTableSwitchStmt) {
@@ -55,16 +55,7 @@ public class CallGraphTools {
 			switchCondition = addLookupSwitchCondition((JLookupSwitchStmt) conditionStmt, currentStmt);
 		}
 
-		// 处理 switch中的条件。
-		StringBuilder tmpSb = new StringBuilder(preConditions.toString());
-
-		if (tmpSb.length() > 0) {
-			tmpSb.append(" && ");
-		}
-
-		tmpSb.append(switchCondition.toString());
-
-		return tmpSb;
+		return switchCondition;
 	}
 
 	private static StringBuilder addTableSwitchCondition(JTableSwitchStmt preConditionStmt, Stmt currentStmt)

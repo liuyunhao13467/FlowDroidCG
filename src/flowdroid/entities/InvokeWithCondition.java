@@ -12,6 +12,7 @@ import java.util.Queue;
 import flowdroid.db.MySQLCor;
 import flowdroid.entities.graph.MyBriefUnitGraph;
 import flowdroid.entities.graph.UnitGraphForTopology;
+import flowdroid.utils.CallGraphTools;
 import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
 import soot.SootMethod;
 import soot.Unit;
@@ -19,6 +20,7 @@ import soot.jimple.Stmt;
 import soot.jimple.SwitchStmt;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.jimple.internal.JIfStmt;
+import soot.jimple.toolkits.callgraph.CallGraphPack;
 import soot.toolkits.graph.UnitGraph;
 
 public class InvokeWithCondition {
@@ -29,7 +31,13 @@ public class InvokeWithCondition {
 	public InvokeWithCondition(SootMethod method) {
 		caller = method;
 		unit2Conditions = new HashMap<>();
-		dealConditions(method);// 记录调用者的生成（关键）
+		try {
+			
+			dealConditions(method);// 记录调用者的生成（关键）
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Map<Unit, List<PreMethodAndPreCondition>> getConditions() {
@@ -40,7 +48,7 @@ public class InvokeWithCondition {
 		return this.caller;
 	}
 
-	private void dealConditions(SootMethod method) {
+	private void dealConditions(SootMethod method) throws Exception {
 		// debug
 		boolean canShowGraph = false;
 		if (method.getName().equals("generate")) {
@@ -68,20 +76,29 @@ public class InvokeWithCondition {
 		System.out.println("getConditions end ~~");
 	}
 
-	public void recordConditionStr(UnitGraph ug, Queue<Unit> topologyOrder) {
+	public void recordConditionStr(UnitGraph ug, Queue<Unit> topologyOrder) throws Exception {
 		System.out.println("recordConditionStr start ~~");
 
 		while (!topologyOrder.isEmpty()) {// 按照拓扑顺序进行处理。
 
-			Unit unit = topologyOrder.poll();
+			Stmt stmt = (Stmt)topologyOrder.poll();
 			List<PreMethodAndPreCondition> conditions = new ArrayList<>();
 
-			for (Unit pre : ug.getPredsOf(unit)) {// 从前驱那里获得条件信息。
+			for (Unit pre : ug.getPredsOf(stmt)) {// 从前驱那里获得条件信息。
 				PreMethodAndPreCondition preMethodAndCondtion = new PreMethodAndPreCondition();
-				if (pre instanceof JIfStmt || pre instanceof SwitchStmt) {
+				if ( pre instanceof JIfStmt ) {
 					
-					preMethodAndCondtion.setConditions(pre);
+					String ifCondition = CallGraphTools.getIfCondition( (Stmt)pre, stmt ).toString();
+//					preMethodAndCondtion.setConditions(pre);
+					preMethodAndCondtion.setPreConditions(ifCondition);
 					conditions.add(preMethodAndCondtion);
+					
+				}else if( pre instanceof SwitchStmt ){
+					
+					String switchCondition = CallGraphTools.getSwitchCondition( (Stmt)pre, stmt).toString();
+//					preMethodAndCondtion.setConditions(pre);
+					preMethodAndCondtion.setPreConditions(switchCondition);
+					conditions.add(preMethodAndCondtion);	
 					
 				}else if (unit2Conditions.get(pre) != null) {
 					
@@ -90,7 +107,7 @@ public class InvokeWithCondition {
 				}
 			}
 			
-			unit2Conditions.put(unit, conditions);
+			unit2Conditions.put(stmt, conditions);
 		}
 
 		System.out.println("recordConditionStr end ~~");
@@ -99,6 +116,7 @@ public class InvokeWithCondition {
 	//TODO  test，也许应该移动到数据库操作那里。
 	public void insertEdges(Map<SootMethod, Integer> method2Id,ProcessManifest manifest,MySQLCor mySql) throws SQLException{
 		System.out.println("insert method with conditions : " + caller.getSignature());
+		
 		String insertEdgesSql = "insert ignore into invoke2 (apk_name,apk_version,caller_id,callee_id,conditions) "
 				+ "values(?,?,?,?,?);";
 		int callerId = method2Id.get(caller);
@@ -123,8 +141,8 @@ public class InvokeWithCondition {
 					prestmt.setInt(4, calleeId);
 					
 					//TODO 需要区分if，还是switch.
-					if(condition.getConditions() != null){
-						prestmt.setString(5, condition.getConditions().toString());
+					if(condition.getPreConditions() != null){
+						prestmt.setString(5, condition.getPreConditions().toString());
 					}else{
 						prestmt.setString(5, "NO");
 					}
@@ -138,6 +156,7 @@ public class InvokeWithCondition {
 	public static class PreMethodAndPreCondition {
 		protected Unit invoke;
 		protected Unit Conditions;
+		protected String preConditions;
 
 		public Unit getInvoke() {
 			return invoke;
@@ -154,5 +173,15 @@ public class InvokeWithCondition {
 		public void setConditions(Unit conditions) {
 			Conditions = conditions;
 		}
+
+		public String getPreConditions() {
+			return preConditions;
+		}
+
+		public void setPreConditions(String preConditions) {
+			this.preConditions = preConditions;
+		}
+	
+		
 	}
 }
