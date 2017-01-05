@@ -68,13 +68,13 @@ public class CallGraphTools {
 
 		String indexNeeded = null;
 		for (int i = lowIndex; i < highIndex; i++) {
-			if (currentStmt.equals(jTable.getTarget(i - lowIndex))) {
-				indexNeeded = String.valueOf((i - lowIndex));
+			if (currentStmt == jTable.getTarget(i - lowIndex)) {
+				indexNeeded = String.valueOf((i));
 			}
 		}
 		
 		if (currentStmt.equals(jTable.getTarget(highIndex - lowIndex))) {
-			indexNeeded = String.valueOf((highIndex - lowIndex));
+			indexNeeded = String.valueOf((highIndex));
 		}
 		
 		if (currentStmt.equals(jTable.getDefaultTarget())) {
@@ -111,6 +111,11 @@ public class CallGraphTools {
 				indexNeeded = lookupValues.get(i).toString();
 			}
 		}
+		if(currentStmt == jLookup.getDefaultTarget()){
+			indexNeeded = Jimple.DEFAULT;
+		}
+		
+		
 		if (indexNeeded != null && indexNeeded != "") {
 			tmpSb.append("switch == ").append(indexNeeded);
 		} else {

@@ -22,6 +22,7 @@ public class JSwitchTest {
 	private static void testSwitchStmt() {
 		SootClass appclass = Scene.v().loadClassAndSupport("SwitchTest");// 若无法找到，则生成一个。
 		InvokeWithCondition methodWithCondition = new InvokeWithCondition(appclass.getMethodByName("C"));
+		
 		Map<Unit, List<PreMethodAndPreCondition>> units2Condition = methodWithCondition.getConditions();
 		Set<Unit> units = units2Condition.keySet();
 		for(Unit unit :units){
