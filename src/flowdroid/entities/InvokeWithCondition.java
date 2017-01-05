@@ -100,6 +100,10 @@ public class InvokeWithCondition {
 					preMethodAndCondtion.setPreConditions(switchCondition);
 					conditions.add(preMethodAndCondtion);	
 					
+				}else if(((Stmt)pre).containsInvokeExpr()){
+					
+					//do nothing.( kill the info )
+					
 				}else if (unit2Conditions.get(pre) != null) {
 					
 					conditions.addAll(unit2Conditions.get(pre));//正常情况下，直接获得前驱信息。

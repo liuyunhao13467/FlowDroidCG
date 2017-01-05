@@ -10,6 +10,7 @@ import flowdroid.entities.InvokeWithCondition.PreMethodAndPreCondition;
 import soot.Scene;
 import soot.SootClass;
 import soot.Unit;
+import soot.jimple.Stmt;
 
 public class JSwitchTest {
 	public static final String path = "test/javaTest";
@@ -24,6 +25,11 @@ public class JSwitchTest {
 		Map<Unit, List<PreMethodAndPreCondition>> units2Condition = methodWithCondition.getConditions();
 		Set<Unit> units = units2Condition.keySet();
 		for(Unit unit :units){
+			
+			if(!((Stmt)unit).containsInvokeExpr()){
+				continue;
+			}
+			
 			System.out.println(unit.toString() + " : ");
 			for(PreMethodAndPreCondition methodAndCondition : units2Condition.get(unit) )
 			System.out.println("condition is  --->  " + methodAndCondition.getPreConditions());

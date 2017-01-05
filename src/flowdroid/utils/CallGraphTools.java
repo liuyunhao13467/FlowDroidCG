@@ -86,7 +86,13 @@ public class CallGraphTools {
 			tmpSb.append("switch == ").append(indexNeeded);
 			
 		} else {
-			throw new Exception("there is no conditions in switch : " + preConditionStmt);
+			try{
+				throw new Exception("there is no conditions in switch : " + preConditionStmt);	
+			}catch(Exception e){
+				e.printStackTrace();
+				System.exit(0);
+			}
+			
 		}
 
 		return tmpSb;
