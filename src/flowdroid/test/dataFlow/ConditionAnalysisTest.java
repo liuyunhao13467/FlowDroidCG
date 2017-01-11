@@ -3,6 +3,7 @@ package flowdroid.test.dataFlow;
 import java.util.Iterator;
 
 import flowdroid.SootInit;
+import flowdroid.parser.dataflow.MySimpleConditionAnalysis;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -19,7 +20,7 @@ public class ConditionAnalysisTest {
 		SootClass appclass = Scene.v().loadClassAndSupport("TestMain2");
 		SootMethod method = appclass.getMethodByName("C");
 		UnitGraph ug = new BriefUnitGraph(method.retrieveActiveBody());
-		MyConditionAnalysis mca = new MyConditionAnalysis(ug);
+		MySimpleConditionAnalysis mca = new MySimpleConditionAnalysis(ug);
 		
 		for(Iterator<Unit> it = ug.iterator() ; it.hasNext() ; ){
 			Unit unit = it.next();

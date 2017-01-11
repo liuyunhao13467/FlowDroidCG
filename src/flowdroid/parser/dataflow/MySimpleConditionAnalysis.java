@@ -1,4 +1,4 @@
-package flowdroid.test.dataFlow;
+package flowdroid.parser.dataflow;
 
 import flowdroid.utils.CallGraphTools;
 import soot.Unit;
@@ -8,12 +8,17 @@ import soot.toolkits.scalar.ArraySparseSet;
 import soot.toolkits.scalar.FlowSet;
 import soot.toolkits.scalar.ForwardFlowAnalysis;
 
-public class MyConditionAnalysis extends ForwardFlowAnalysis<Unit, FlowSet<Unit>> {
+/*
+ * 对语句图中的语句进行条件分配，最终达到为 方法分配条件的目的。
+ * 分配规则：
+ * 1.为每个语句分配最近的条件。（直接控制依赖部分）
+ * 2.老师让A1(),A2(),A2在A1之后，A1分配条件，A2不分配条件。【有些不合理】
+ */
+public class MySimpleConditionAnalysis extends ForwardFlowAnalysis<Unit, FlowSet<Unit>> {
 
-	// 成员变量。
 	private FlowSet emptySet;
 
-	public MyConditionAnalysis(DirectedGraph<Unit> graph) {
+	public MySimpleConditionAnalysis(DirectedGraph<Unit> graph) {
 		super(graph);
 		emptySet = new ArraySparseSet();
 		doAnalysis();
