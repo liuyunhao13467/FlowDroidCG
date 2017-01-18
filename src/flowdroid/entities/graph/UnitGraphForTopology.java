@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import flowdroid.utils.graphUtils.dotUtils.UnitGraph2Dot;
 import soot.Unit;
 import soot.toolkits.graph.UnitGraph;
 import soot.util.Chain;
@@ -78,12 +79,15 @@ public class UnitGraphForTopology {
 	}
 
 	private void setTopologicalOrder(){
+		boolean isChanged = false;
 		System.out.println("setTopologicalOrder start ~~");
 		while(unitChain.size() != 0){//TODO 出现死循环
+			isChanged = false;
 			Iterator<Unit> unitIt = unitChain.iterator();
 			while(unitIt.hasNext()){
 				Unit tmp = unitIt.next();
 				if(getPredsOf(tmp) == null || getPredsOf(tmp).size() == 0 ){
+					isChanged = true;
 					//加入到记录中。 
 					topologyOder.add(tmp);
 					//删除与之相关联的边。
@@ -91,6 +95,13 @@ public class UnitGraphForTopology {
 					//从迭代器中删除该节点。
 					unitIt.remove();
 				}
+			}
+			
+			if(!isChanged){
+				System.out.println("出问题的 数据： " + ug.getBody().getMethod());
+				UnitGraph2Dot.drawMethodUnitGraph(ug);
+				System.exit(0);
+				
 			}
 		}
 		System.out.println("setTopologicalOrder end ~~");

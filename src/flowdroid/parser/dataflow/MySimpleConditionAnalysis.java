@@ -43,11 +43,9 @@ public class MySimpleConditionAnalysis extends ForwardFlowAnalysis<Unit, FlowSet
 	}
 
 	private void gen(FlowSet outSet, Unit u) {
-		
 		if (CallGraphTools.isIfOrSwitch((Stmt) u)) {
 			outSet.add(u);
 		}
-		
 	}
 
 	@Override

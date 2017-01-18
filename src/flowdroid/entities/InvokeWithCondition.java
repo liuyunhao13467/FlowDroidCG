@@ -49,23 +49,9 @@ public class InvokeWithCondition {
 	}
 
 	private void dealConditions(SootMethod method) throws Exception {
-		// debug
-		boolean canShowGraph = false;
-		if (method.getName().equals("generate")) {
-			canShowGraph = true;
-		}
-
+		
 		System.out.println("getConditions start ~~");
 		UnitGraph ug = new MyBriefUnitGraph(method.retrieveActiveBody());
-
-		// debug -- 查看是否去除了异常等信息。
-		if (canShowGraph) {
-			UnitGraph2Dot.drawMethodUnitGraph(ug, "dropHead");
-		}
-		// debug -- 查看是否移除了环。
-		if (canShowGraph) {
-			UnitGraph2Dot.drawMethodUnitGraph(ug, "removeCycle");
-		}
 
 		// 拓扑排序 TODO 错误??
 		UnitGraphForTopology ugft = new UnitGraphForTopology(ug);
